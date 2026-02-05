@@ -1,0 +1,7 @@
+{
+  "name": "智保同行",
+  "description": "Official Macau Consular Protection mobile web application providing emergency assistance, travel safety indices, and educational resources.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
