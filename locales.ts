@@ -297,7 +297,7 @@ export const translations = {
         "1": "今天（3月2日）下午1時至1時40分，我們團隊會在大堂處舉辦第一個攤位活動",
         "2": "「智保同行」活動全面上線",
         "3": "春節假期後首個工作日",
-        "4": "Netlify部署「智保同行」網站成功"
+        "4": "Vercel部署「智保同行」網站成功"
       },
       knowledge: {
         "1": "如何遺失護照？",
@@ -527,7 +527,7 @@ export const translations = {
       item_2_desc: "暫無內文",
       item_3_title: "春節假期後首個工作日",
       item_3_desc: "暫無內文",
-      item_4_title: "Netlify部署「智保同行」網站成功",
+      item_4_title: "Vercel部署「智保同行」網站成功",
       item_4_desc: "暫無內文"
     },
     hot_knowledge: {
