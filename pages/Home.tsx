@@ -35,7 +35,7 @@ const Home: React.FC = () => {
             <img 
               src="/images/A1.webp" 
               alt="Consular Protection" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
           </div>
@@ -58,7 +58,7 @@ const Home: React.FC = () => {
              <img 
               src="/images/A2.webp" 
               alt="Resident Rights" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
           </div>
@@ -81,7 +81,7 @@ const Home: React.FC = () => {
              <img 
               src="/images/A3.webp" 
               alt="Events" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
           </div>
@@ -104,7 +104,7 @@ const Home: React.FC = () => {
              <img 
               src="/images/A4.webp" 
               alt="Resources" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
           </div>

@@ -262,7 +262,7 @@ const Graphics: React.FC = () => {
          {/* Masonry Layout */}
          <div className="columns-2 gap-2 space-y-2 px-1">
             {filteredItems.map((item) => (
-               <div key={item.id} className="break-inside-avoid bg-transparent rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group mb-2 border border-white/10">
+               <div key={item.id} className="break-inside-avoid bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group mb-2 border border-white/10">
                   {/* Image Area */}
                   <div className={`w-full ${item.height} ${item.color} relative overflow-hidden flex items-center justify-center`}>
                      <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-20 group-hover:opacity-30 transition-opacity`}></div>

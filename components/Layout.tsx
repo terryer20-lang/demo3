@@ -67,7 +67,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {/* Logo Section */}
         <Link to="/" className="flex items-center gap-3 group z-50 relative">
           <div className="w-10 h-10 md:w-11 md:h-11 rounded-full border-2 border-cyan-500/50 bg-black/50 shadow-[0_0_15px_rgba(6,182,212,0.5)] flex items-center justify-center overflow-hidden shrink-0 group-hover:scale-105 transition-transform backdrop-blur-sm">
-             <img src="/images/Escudos de Quíron_1.webp" alt="Logo" className="w-full h-full object-cover" />
+             <img src="/images/Escudos de Quíron.webp" alt="Logo" className="w-full h-full object-cover" />
           </div>
           <span className="font-bold text-white text-lg md:text-xl tracking-wide whitespace-nowrap drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] text-shadow-md">
             {t('app.title')}

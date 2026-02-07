@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
               </div>
               <div className="bg-transparent rounded-full p-2 backdrop-blur-md border border-white/10">
                 <img 
-                  src="/images/Escudos de Quíron_2.webp" 
+                  src="/images/Escudos de Quíron.webp" 
                   alt="Escudos de Quíron Logo" 
                   className="w-32 h-32 object-contain drop-shadow-lg"
                 />
@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
            <img 
              src="/images/大合照.webp" 
              alt="Group Photo" 
-             className="w-full h-auto object-cover block opacity-90 hover:opacity-100 transition-opacity"
+             className="w-full h-auto object-cover block"
              width={1054}
              height={699}
            />
@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
 
         {/* 1. Holographic ID Card */}
         <div className="perspective-1000">
-           <div className="relative bg-transparent backdrop-blur-xl rounded-2xl p-5 text-white shadow-2xl overflow-hidden transform transition-transform hover:scale-[1.01] border border-white/10 group">
+           <div className="relative bg-slate-900 backdrop-blur-xl rounded-2xl p-5 text-white shadow-2xl overflow-hidden transform transition-transform hover:scale-[1.01] border border-white/10 group">
               
               <div className="absolute inset-0 z-0">
                  <img 

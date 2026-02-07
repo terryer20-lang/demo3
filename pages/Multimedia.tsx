@@ -17,7 +17,7 @@ const Multimedia: React.FC = () => {
           {[1, 2, 3].map((i) => (
             <div key={i} className="flex-none w-[75vw] md:w-80 snap-center group">
               <div className="aspect-video bg-slate-800/50 rounded-2xl mb-3 relative overflow-hidden shadow-lg border border-white/10">
-                <img src={`https://picsum.photos/400/225?random=${i}`} alt="Video Thumbnail" className="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity" />
+                <img src={`https://picsum.photos/400/225?random=${i}`} alt="Video Thumbnail" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center group-hover:scale-110 transition-transform border border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
                     <div className="w-0 h-0 border-t-8 border-t-transparent border-l-[16px] border-l-white border-b-8 border-b-transparent ml-1"></div>
