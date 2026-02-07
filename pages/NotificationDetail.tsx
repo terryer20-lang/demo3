@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../LanguageContext';
@@ -19,16 +20,16 @@ const NotificationDetail: React.FC = () => {
   }
 
   return (
-    <div className="pt-20 pb-10 px-4 max-w-2xl mx-auto min-h-screen">
-      <button onClick={() => navigate(-1)} className="mb-6 text-brand-blue font-bold flex items-center gap-1 hover:underline">
+    <div className="pt-20 pb-10 px-4 max-w-2xl mx-auto min-h-screen bg-transparent">
+      <button onClick={() => navigate(-1)} className="mb-6 text-gray-400 font-bold flex items-center gap-1 hover:text-white transition-colors">
         &larr; {t('app.back')}
       </button>
-      <div className="bg-white p-6 md:p-8 rounded-2xl shadow-md border border-gray-100">
+      <div className="bg-slate-900/60 backdrop-blur-xl p-6 md:p-8 rounded-2xl shadow-xl border border-white/10">
         <div className="flex items-center gap-3 mb-4">
-          <span className="bg-brand-blue/10 text-brand-blue px-3 py-1 rounded-full text-xs font-bold">{notification.date}</span>
+          <span className="bg-brand-blue/20 text-blue-300 px-3 py-1 rounded-full text-xs font-bold border border-blue-500/30">{notification.date}</span>
         </div>
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-tight">{t(`data.notifications.${id}`)}</h1>
-        <div className="prose prose-sm md:prose-base text-gray-600 leading-relaxed max-w-none">
+        <h1 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">{t(`data.notifications.${id}`)}</h1>
+        <div className="prose prose-sm md:prose-base prose-invert text-gray-300 leading-relaxed max-w-none">
            <p className="mb-4">
              {t('app.placeholder')}
            </p>

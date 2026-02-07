@@ -9,10 +9,10 @@ const HotKnowledge: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="pb-24 min-h-screen bg-gray-50 font-sans">
+    <div className="pb-24 min-h-screen bg-transparent font-sans">
       
-      {/* Hero: Vibrant Gradient */}
-      <div className="relative pt-32 pb-16 px-6 bg-gradient-to-br from-orange-400 via-pink-500 to-purple-600 rounded-b-[3rem] shadow-2xl overflow-hidden mb-8">
+      {/* Hero */}
+      <div className="relative pt-32 pb-16 px-6 bg-gradient-to-br from-orange-600/80 via-pink-600/80 to-purple-600/80 backdrop-blur-md rounded-b-[3rem] shadow-2xl overflow-hidden mb-8 border-b border-white/20">
         <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         <div className="relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl font-black text-white leading-tight drop-shadow-md">
@@ -29,40 +29,40 @@ const HotKnowledge: React.FC = () => {
              <div 
                key={item.id}
                onClick={() => navigate(`/knowledge/${item.id}`)}
-               className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 active:scale-[0.99] transition-all hover:shadow-md cursor-pointer flex justify-between items-center group"
+               className="bg-slate-900/60 backdrop-blur-md rounded-2xl p-5 shadow-lg border border-white/10 active:scale-[0.99] transition-all hover:bg-slate-900/80 cursor-pointer flex justify-between items-center group"
              >
                <div className="flex-1 min-w-0 pr-4">
-                  <h3 className="font-bold text-gray-800 text-base md:text-lg mb-2 leading-tight group-hover:text-brand-blue transition-colors">
+                  <h3 className="font-bold text-gray-200 text-base md:text-lg mb-2 leading-tight group-hover:text-brand-blue transition-colors">
                     {t(`hot_knowledge.${item.titleKey}`)}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {item.tags.map((tag, i) => (
-                      <span key={i} className="inline-block px-2 py-0.5 rounded bg-gray-100 text-[10px] text-gray-500 font-bold">
+                      <span key={i} className="inline-block px-2 py-0.5 rounded bg-white/10 text-[10px] text-gray-400 font-bold border border-white/5">
                         #{tag}
                       </span>
                     ))}
                   </div>
                </div>
-               <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-brand-blue group-hover:text-white transition-all">
+               <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-500 group-hover:bg-brand-blue group-hover:text-white transition-all border border-white/5">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                </div>
              </div>
            ))}
         </div>
 
-        {/* Section 3: Trending Tags Cloud (Kept as requested style update didn't explicitly ask to remove, fits the list theme) */}
-        <section className="pt-4 pb-8 border-t border-gray-200 mt-8">
-           <h2 className="text-lg font-bold text-gray-800 mb-4 px-1">
+        {/* Tags Cloud */}
+        <section className="pt-4 pb-8 border-t border-white/10 mt-8">
+           <h2 className="text-lg font-bold text-white mb-4 px-1">
              🔥 {t('hot_knowledge.tags_title')}
            </h2>
            <div className="flex flex-wrap gap-2">
               {['#VisaFree', '#LostPassport', '#12308', '#SafetyFirst', '#TravelTips', '#ConsularProtection', '#MacauID'].map((tag, i) => (
                  <span 
                    key={i}
-                   className={`px-4 py-2 rounded-full text-sm font-bold border-2 transition-transform hover:scale-105 cursor-default ${
-                     i % 3 === 0 ? 'bg-pink-50 text-pink-600 border-pink-100' : 
-                     i % 3 === 1 ? 'bg-blue-50 text-blue-600 border-blue-100' : 
-                     'bg-purple-50 text-purple-600 border-purple-100'
+                   className={`px-4 py-2 rounded-full text-sm font-bold border backdrop-blur-sm transition-transform hover:scale-105 cursor-default ${
+                     i % 3 === 0 ? 'bg-pink-500/20 text-pink-300 border-pink-500/30' : 
+                     i % 3 === 1 ? 'bg-blue-500/20 text-blue-300 border-blue-500/30' : 
+                     'bg-purple-500/20 text-purple-300 border-purple-500/30'
                    }`}
                  >
                    {tag}

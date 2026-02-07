@@ -1,4 +1,5 @@
 
+
 import { MenuItem, ChallengeQuestion, SafetyQuestion, NotificationItem, KnowledgeCard, KnowledgeItem } from './types';
 
 export const MENU_ITEMS: MenuItem[] = [
@@ -27,6 +28,7 @@ export const MOCK_NOTIFICATIONS: NotificationItem[] = [
   { id: '2', date: '2026-03-02', link: '/notification/2' },
   { id: '3', date: '2026-02-25', link: '/notification/3' },
   { id: '4', date: '2026-02-02', link: '/notification/4' },
+  { id: '5', date: '2026-02-06', link: '/notification/5' },
 ];
 
 export const KNOWLEDGE_CARDS: KnowledgeCard[] = [
@@ -126,7 +128,7 @@ export const COUNTRY_RISK_DATA = [
   { code: "VN", en: "Vietnam", cn: "越南", gpi: 1.721, gti: null, safeIndex: 73, risk: "Low", usRank: 55 },
   { code: "RO", en: "Romania", cn: "羅馬尼亞", gpi: 1.721, gti: null, safeIndex: 80, risk: "Low", usRank: 40 },
   { code: "KR", en: "South Korea", cn: "韓國", gpi: 1.736, gti: 0.582, safeIndex: 82, risk: "Low", usRank: 29 },
-  { code: "OM", en: "Oman", cn: "阿曼", gpi: 1.738, gti: 2.927, safeIndex: 76, risk: "Low", usRank: 42 },
+  { code: "OM", en: "阿曼", cn: "阿曼", gpi: 1.738, gti: 2.927, safeIndex: 76, risk: "Low", usRank: 42 },
   { code: "BW", en: "Botswana", cn: "波札那", gpi: 1.743, gti: null, safeIndex: 77, risk: "Low", usRank: null },
   { code: "TL", en: "Timor-Leste", cn: "東帝汶", gpi: 1.758, gti: null, safeIndex: 48, risk: "High", usRank: null },
   { code: "GR", en: "Greece", cn: "希臘", gpi: 1.764, gti: 2.928, safeIndex: 73, risk: "Low", usRank: 20 },
@@ -162,7 +164,7 @@ export const COUNTRY_RISK_DATA = [
   { code: "AO", en: "Angola", cn: "安哥拉", gpi: 1.987, gti: 1.657, safeIndex: 48, risk: "High", usRank: null },
   { code: "NP", en: "Nepal", cn: "尼泊爾", gpi: 1.987, gti: 1.113, safeIndex: 59, risk: "Medium", usRank: null },
   { code: "KG", en: "Kyrgyzstan", cn: "吉爾吉斯斯坦", gpi: 1.988, gti: null, safeIndex: 38, risk: "Medium", usRank: null },
-  { code: "DO", en: "Dominican Republic", cn: "多明尼加", gpi: 1.996, gti: null, safeIndex: 54, risk: "Medium", usRank: 60 },
+  { code: "DO", en: "Dominican Republic", cn: "多明尼克", gpi: 1.996, gti: null, safeIndex: 54, risk: "Medium", usRank: 60 },
   { code: "TJ", en: "Tajikistan", cn: "塔吉克斯坦", gpi: 1.996, gti: 0.999, safeIndex: 38, risk: "Medium", usRank: null },
   { code: "TN", en: "Tunisia", cn: "突尼斯", gpi: 1.998, gti: 2.184, safeIndex: 53, risk: "Medium", usRank: 58 },
   { code: "GQ", en: "Equatorial Guinea", cn: "赤道幾內亞", gpi: 2.004, gti: null, safeIndex: 68, risk: "Medium", usRank: null },

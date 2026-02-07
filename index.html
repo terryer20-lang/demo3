@@ -1,17 +1,17 @@
 
 <!DOCTYPE html>
-<html lang="zh-MO" style="background-color: #CC0000;">
+<html lang="zh-MO" style="background-color: #0f172a;">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="theme-color" content="#CC0000">
+    <meta name="theme-color" content="#0f172a">
     <meta name="description" content="智保同行 - 澳門領事保護與協助宣傳平台">
     <!-- Reverted to absolute path for Vercel -->
     <link rel="manifest" href="/manifest.json">
     <title>智保同行</title>
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Open+Sans:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Open+Sans:wght@400;600;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind via CDN for simplicity, though PostCSS is preferred in full Vite apps -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -65,10 +65,15 @@
         touch-action: manipulation;
         -webkit-tap-highlight-color: transparent;
       }
+      /* Custom mask for gradient fade */
+      .mask-gradient-r {
+        -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+        mask-image: linear-gradient(to right, black 85%, transparent 100%);
+      }
     </style>
     
     <!-- Clicky Analytics -->
-    <script async data-id="101500729" src="//static.getclicky.com/js"></script>
+    <script async data-id="101500856" src="//static.getclicky.com/js"></script>
     
     <script>
       if ('serviceWorker' in navigator) {
@@ -102,7 +107,7 @@
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-  <body class="bg-gray-900 text-gray-800 antialiased selection:bg-brand-red selection:text-white">
+  <body class="bg-gray-900 text-gray-800 antialiased selection:bg-cyan-500 selection:text-white">
     <div id="root"></div>
     <!-- CRITICAL FIX: Vite entry point -->
     <script type="module" src="/index.tsx"></script>

@@ -33,61 +33,61 @@ const Resources: React.FC = () => {
     { 
       title: t('resources.guide_1_t'), 
       url: "https://drive.google.com/file/d/1vGhf8DCaNA2tocWt9vYK74mGFqeVkxTd/view?usp=sharing",
-      color: "from-red-700 to-red-900",
+      color: "border-red-700/80 hover:bg-red-500/10",
       type: "PDF"
     },
     { 
       title: t('resources.guide_macau_t'), 
       url: "https://drive.google.com/file/d/1moXKmtsGNwWI-FmklMQh9bLLF5pq0Gbt/view?usp=sharing",
-      color: "from-green-700 to-green-900",
+      color: "border-green-700/80 hover:bg-green-500/10",
       type: "PDF"
     },
     { 
       title: t('resources.guide_docs_t'), 
       url: "https://drive.google.com/file/d/12SjMJtQ78o30f-DLA7KcRxfZ5BCln3mB/view?usp=sharing",
-      color: "from-blue-700 to-blue-900",
+      color: "border-blue-700/80 hover:bg-blue-500/10",
       type: "PDF"
     },
     { 
       title: t('resources.guide_fraud_t'), 
       url: "https://drive.google.com/file/d/1TrWR0A0RvuvKwcS6mrNEdf1LHzKinezE/view?usp=sharing",
-      color: "from-purple-700 to-purple-900",
+      color: "border-purple-700/80 hover:bg-purple-500/10",
       type: "PDF"
     },
     { 
       title: t('resources.guide_statement_t'), 
       url: "https://drive.google.com/file/d/1taWJK_OVZtYWk1yXMtPH5jmwwH0-tADA/view?usp=sharing",
-      color: "from-orange-700 to-orange-900",
+      color: "border-orange-700/80 hover:bg-orange-500/10",
       type: "PDF"
     },
     { 
       title: t('resources.guide_safety_t'), 
       url: "https://drive.google.com/file/d/1E7DusoA55-2zTljJGL7yHfm6bUgPTQ_9/view?usp=sharing",
-      color: "from-cyan-700 to-cyan-900",
+      color: "border-cyan-700/80 hover:bg-cyan-500/10",
       type: "PDF"
     },
     { 
       title: t('resources.guide_form_t'), 
       url: "https://drive.google.com/file/d/1Nrmgvztrrk1qy1AghrzD4L40JKNgDcEx/view?usp=sharing",
-      color: "from-pink-700 to-pink-900",
+      color: "border-pink-700/80 hover:bg-pink-500/10",
       type: "PDF"
     },
     {
       title: t('resources.guide_treaties_t'),
       url: "https://cs.mfa.gov.cn/zlbg/tyxy_660627/201402/t20140225_961624.shtml",
-      color: "from-slate-700 to-slate-900",
+      color: "border-slate-700/80 hover:bg-slate-500/10",
       type: "WEB"
     },
     {
       title: t('resources.guide_regulation_t'),
       url: "https://cs.mfa.gov.cn/zlbg/flfg/gqqjxg/202312/t20231218_11205846.shtml",
-      color: "from-indigo-700 to-indigo-900",
+      color: "border-indigo-700/80 hover:bg-indigo-500/10",
       type: "WEB"
     },
     {
       title: t('resources.guide_vienna_t'),
       url: "https://cs.mfa.gov.cn/zlbg/tyxy_660627/201107/t20110726_961616.shtml",
-      color: "from-teal-700 to-teal-900",
+      color: "border-teal-700/80 hover:bg-teal-500/10",
       type: "WEB"
     }
   ];
@@ -105,12 +105,12 @@ const Resources: React.FC = () => {
   ];
 
   return (
-    <div className="pb-24 min-h-screen bg-gray-50 font-sans pt-16">
+    <div className="pb-24 min-h-screen bg-transparent font-sans pt-16">
       
-      {/* Hero: Digital Backpack Theme - Standardized Size */}
-      <div className="relative py-10 px-6 bg-[#FFC107] text-white rounded-b-[3rem] shadow-2xl mb-8 overflow-hidden">
+      {/* Hero */}
+      <div className="relative py-10 px-6 bg-transparent backdrop-blur-md text-white rounded-b-[3rem] shadow-2xl mb-8 overflow-hidden border-b border-white/10">
         <div className="relative z-10">
-          <h1 className="text-4xl md:text-5xl font-black leading-tight mb-2 drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl font-black leading-tight mb-2 drop-shadow-lg text-brand-orange">
             {t('resources.hero_title')}
           </h1>
           <p className="text-white/90 text-sm leading-relaxed max-w-lg font-bold">
@@ -123,7 +123,7 @@ const Resources: React.FC = () => {
 
         {/* Section 1: Official Guides Grid */}
         <section>
-          <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2 px-1">
+          <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2 px-1">
             <span>📚</span> {t('resources.section_guide')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
@@ -133,12 +133,12 @@ const Resources: React.FC = () => {
                 href={guide.url}
                 target="_blank"
                 rel="noreferrer"
-                className={`bg-gradient-to-br ${guide.color} rounded-2xl p-4 text-white relative overflow-hidden group shadow-lg hover:scale-[1.01] transition-transform`}
+                className={`bg-transparent border-2 ${guide.color} backdrop-blur-md rounded-2xl p-4 text-white relative overflow-hidden group shadow-lg hover:scale-[1.01] transition-transform`}
               >
                  <div className="absolute right-0 bottom-0 text-6xl opacity-10 group-hover:opacity-20 transition-opacity">📖</div>
                  <div className="relative z-10">
                     <h3 className="text-sm font-bold leading-relaxed">
-                        <span className="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded inline-block mr-2 backdrop-blur-md align-middle">
+                        <span className="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded inline-block mr-2 backdrop-blur-md align-middle border border-white/20">
                           {guide.type || 'PDF'}
                         </span>
                         <span className="align-middle">{guide.title}</span>
@@ -155,36 +155,36 @@ const Resources: React.FC = () => {
           {/* Quick Tools */}
           <div className="grid grid-cols-2 gap-3">
              {/* Side Item 1 - Emergency Card */}
-            <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
-               <div className="absolute -right-2 -top-2 w-16 h-16 bg-yellow-50 rounded-full z-0"></div>
+            <div className="bg-transparent backdrop-blur-md rounded-2xl p-4 border border-white/10 shadow-sm flex flex-col justify-between relative overflow-hidden group hover:bg-slate-900/80 transition-all">
+               <div className="absolute -right-2 -top-2 w-16 h-16 bg-yellow-500/20 rounded-full z-0"></div>
                <div className="relative z-10">
                   <div className="text-3xl mb-2">📇</div>
-                  <h3 className="font-bold text-gray-800 text-sm leading-tight">{t('resources.guide_2_t')}</h3>
+                  <h3 className="font-bold text-gray-200 text-sm leading-tight">{t('resources.guide_2_t')}</h3>
                   <p className="text-[10px] text-gray-400 mt-1">{t('resources.guide_2_d')}</p>
                </div>
             </div>
 
             {/* Side Item 2 - Flowchart */}
-            <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
-               <div className="absolute -right-2 -top-2 w-16 h-16 bg-blue-50 rounded-full z-0"></div>
+            <div className="bg-transparent backdrop-blur-md rounded-2xl p-4 border border-white/10 shadow-sm flex flex-col justify-between relative overflow-hidden group hover:bg-slate-900/80 transition-all">
+               <div className="absolute -right-2 -top-2 w-16 h-16 bg-blue-500/20 rounded-full z-0"></div>
                <div className="relative z-10">
                   <div className="text-3xl mb-2">🗺️</div>
-                  <h3 className="font-bold text-gray-800 text-sm leading-tight">{t('resources.guide_3_t')}</h3>
+                  <h3 className="font-bold text-gray-200 text-sm leading-tight">{t('resources.guide_3_t')}</h3>
                   <p className="text-[10px] text-gray-400 mt-1">{t('resources.guide_3_d')}</p>
                </div>
             </div>
           </div>
         </section>
 
-        {/* Section: New Media Matrix (3x3 Grid) */}
+        {/* Section: New Media Matrix */}
         <section id="new-media" className="scroll-mt-24">
-           <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2 px-1">
+           <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2 px-1">
              <span>📱</span> {t('resources.section_media')}
            </h2>
            <div className="grid grid-cols-3 gap-3">
               {newMedia.map((media, idx) => (
                  <div key={idx} className="flex flex-col items-center">
-                    <div className="bg-white p-2 rounded-xl shadow-sm border border-gray-100 w-full aspect-square flex items-center justify-center overflow-hidden">
+                    <div className="bg-transparent backdrop-blur-md p-2 rounded-xl shadow-sm border border-white/10 w-full aspect-square flex items-center justify-center overflow-hidden">
                        <img 
                          src={media.src}
                          alt={media.name} 
@@ -192,19 +192,19 @@ const Resources: React.FC = () => {
                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
                        />
                     </div>
-                    <span className="text-[10px] mt-1.5 font-bold text-gray-600 text-center leading-tight">{media.name}</span>
+                    <span className="text-[10px] mt-1.5 font-bold text-gray-400 text-center leading-tight">{media.name}</span>
                  </div>
               ))}
            </div>
-           <p className="text-center text-xs text-gray-400 mt-4">長按二維碼下載/掃描</p>
+           <p className="text-center text-xs text-gray-500 mt-4">長按二維碼下載/掃描</p>
         </section>
 
         {/* Section: Macau One Account */}
         <section id="macau-one-account" className="scroll-mt-24">
-           <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2 px-1">
+           <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2 px-1">
              <span>📲</span> {t('resources.section_macau_one')}
            </h2>
-           <div className="flex justify-center gap-6 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+           <div className="flex justify-center gap-6 bg-transparent backdrop-blur-md p-6 rounded-2xl shadow-sm border border-white/10">
               <div className="flex flex-col items-center gap-2">
                  <img 
                    src="/images/一戶通_iOS.webp" 
@@ -213,7 +213,7 @@ const Resources: React.FC = () => {
                    height={180}
                    className="rounded-xl shadow-md w-[140px] h-[140px] md:w-[180px] md:h-[180px] object-cover"
                  />
-                 <span className="text-xs font-bold text-gray-500">iOS</span>
+                 <span className="text-xs font-bold text-gray-400">iOS</span>
               </div>
               <div className="flex flex-col items-center gap-2">
                  <img 
@@ -223,15 +223,15 @@ const Resources: React.FC = () => {
                    height={180}
                    className="rounded-xl shadow-md w-[140px] h-[140px] md:w-[180px] md:h-[180px] object-cover"
                  />
-                 <span className="text-xs font-bold text-gray-500">Android</span>
+                 <span className="text-xs font-bold text-gray-400">Android</span>
               </div>
            </div>
-           <p className="text-center text-xs text-gray-400 mt-4">長按二維碼下載/掃描</p>
+           <p className="text-center text-xs text-gray-500 mt-4">長按二維碼下載/掃描</p>
         </section>
 
-        {/* Section 4: External Portals - Pill Buttons */}
+        {/* Section 4: External Portals */}
         <section className="pb-8">
-           <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2 px-1">
+           <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2 px-1">
              <span>🔗</span> {t('resources.section_links')}
            </h2>
            <div className="flex flex-col gap-3">
@@ -241,11 +241,11 @@ const Resources: React.FC = () => {
                   href={link.url} 
                   target="_blank" 
                   rel="noreferrer" 
-                  className="flex items-center gap-3 bg-white px-4 py-4 rounded-xl border border-gray-200 shadow-sm hover:border-brand-blue hover:text-brand-blue transition-colors"
+                  className="flex items-center gap-3 bg-transparent backdrop-blur-md px-4 py-4 rounded-xl border border-white/10 shadow-sm hover:bg-white/10 hover:border-white/20 transition-colors"
                 >
                    <span className="text-xl shrink-0">{link.icon}</span>
-                   <span className="text-sm font-bold flex-1">{link.label}</span>
-                   <span className="text-gray-300 text-xs">↗</span>
+                   <span className="text-sm font-bold flex-1 text-gray-200">{link.label}</span>
+                   <span className="text-gray-500 text-xs">↗</span>
                 </a>
               ))}
            </div>

@@ -20,18 +20,18 @@ const KnowledgeDetail: React.FC = () => {
   }
 
   return (
-    <div className="pt-24 pb-20 px-4 min-h-screen bg-gray-50">
+    <div className="pt-24 pb-20 px-4 min-h-screen bg-transparent">
       <div className="max-w-2xl mx-auto">
         <button 
           onClick={() => navigate(-1)} 
-          className="mb-6 text-gray-500 font-bold flex items-center gap-1 hover:text-brand-blue transition-colors text-sm"
+          className="mb-6 text-gray-400 font-bold flex items-center gap-1 hover:text-white transition-colors text-sm"
         >
           &larr; {t('app.back')}
         </button>
         
-        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
-           {/* Header with decorative pattern */}
-           <div className="bg-gradient-to-r from-brand-blue to-purple-600 p-8 text-white relative overflow-hidden">
+        <div className="bg-slate-900/60 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 overflow-hidden">
+           {/* Header */}
+           <div className="bg-gradient-to-r from-brand-blue/80 to-purple-600/80 p-8 text-white relative overflow-hidden backdrop-blur-md">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10 blur-2xl"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-10 -mb-10 blur-xl"></div>
               
@@ -43,7 +43,7 @@ const KnowledgeDetail: React.FC = () => {
                       </span>
                     ))}
                  </div>
-                 <h1 className="text-2xl md:text-3xl font-black leading-tight">
+                 <h1 className="text-2xl md:text-3xl font-black leading-tight drop-shadow-md">
                    {t(`hot_knowledge.${item.titleKey}`)}
                  </h1>
               </div>
@@ -51,15 +51,15 @@ const KnowledgeDetail: React.FC = () => {
 
            {/* Content Body */}
            <div className="p-8">
-              <div className="prose prose-lg text-gray-700 leading-relaxed">
+              <div className="prose prose-lg prose-invert text-gray-300 leading-relaxed">
                  <div className="flex items-start gap-4 mb-6">
                     <span className="text-4xl">💡</span>
-                    <p className="font-bold text-xl text-gray-900 mt-1">
+                    <p className="font-bold text-xl text-white mt-1">
                       {t(`hot_knowledge.${item.contentKey}`)}
                     </p>
                  </div>
                  
-                 <div className="bg-blue-50 rounded-xl p-5 border-l-4 border-blue-500 text-sm text-blue-800">
+                 <div className="bg-blue-500/10 rounded-xl p-5 border-l-4 border-blue-500 text-sm text-blue-200 backdrop-blur-sm">
                     此資訊僅供參考，具體情況請以官方最新公告為準。如遇緊急情況，請立即聯繫外交部全球領保熱線 12308。
                  </div>
               </div>

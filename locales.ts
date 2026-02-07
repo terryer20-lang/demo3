@@ -297,7 +297,8 @@ export const translations = {
         "1": "今天（3月2日）下午1時至1時40分，我們團隊會在大堂處舉辦第一個攤位活動",
         "2": "「智保同行」活動全面上線",
         "3": "春節假期後首個工作日",
-        "4": "Vercel部署「智保同行」網站成功"
+        "4": "Netlify部署「智保同行」網站成功",
+        "5": "Vercel部署「智保同行」網站成功"
       },
       knowledge: {
         "1": "如何遺失護照？",
@@ -527,8 +528,10 @@ export const translations = {
       item_2_desc: "暫無內文",
       item_3_title: "春節假期後首個工作日",
       item_3_desc: "暫無內文",
-      item_4_title: "Vercel部署「智保同行」網站成功",
-      item_4_desc: "暫無內文"
+      item_4_title: "Netlify部署「智保同行」網站成功",
+      item_4_desc: "暫無內文",
+      item_5_title: "Vercel部署「智保同行」網站成功",
+      item_5_desc: "暫無內文"
     },
     hot_knowledge: {
       hero_title: "領保燙知識",
@@ -563,6 +566,16 @@ export const translations = {
 
       item_10_q: "怎麼撥打 12308？兩種方式，一鍵存好，有備無患！",
       item_10_a: "如何撥打 12308 在海外撥打方式為 +86-10-12308，若短碼撥打困難，可撥長號 +86-10-65612308。建議將此號碼存入手機並備份在隨身紙張上，以防萬一。"
+    },
+    contact: {
+      hero_title: "保持聯絡",
+      disclaimer: "本網站由一群中學生自主開發，旨在增進公眾對領事保護、協助服務及居民身份權利的認識與關注。由於團隊成員學業繁忙，網站信息將不定期更新與維護，如有不便，敬請理解。我們誠摯歡迎您對網站用戶界面提出寶貴意見，若發現信息有誤也歡迎指正。",
+      dept_name: "澳門中葡職業技術學校",
+      dept_address: "澳門黑沙環勞動節街",
+      phone_label: "按下與我們取得聯繫",
+      email_label: "Escudos de Quíron 小組電郵",
+      feedback_label: "意見反饋",
+      feedback_btn: "意見反應/留言"
     }
   }
 };
