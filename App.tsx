@@ -23,6 +23,7 @@ import GameA from './pages/GameA';
 import GameB from './pages/GameB';
 import GameC from './pages/GameC';
 import GameD from './pages/GameD';
+import GameE from './pages/GameE';
 import GameRightsDecoder from './pages/GameRightsDecoder';
 import { LanguageProvider } from './LanguageContext';
 
@@ -61,6 +62,7 @@ const AppRoutes = () => {
           <Route path="/game-zone/b" element={<GameB />} />
           <Route path="/game-zone/c" element={<GameRightsDecoder />} />
           <Route path="/game-zone/d" element={<GameD />} />
+          <Route path="/game-zone/e" element={<GameE />} />
           
           <Route path="/safety-card" element={<GameC />} />
           
