@@ -1,4 +1,3 @@
-
 import { MenuItem, ChallengeQuestion, SafetyQuestion, NotificationItem, KnowledgeCard, KnowledgeItem } from './types';
 
 export const MENU_ITEMS: MenuItem[] = [
@@ -159,7 +158,7 @@ export const COUNTRY_RISK_DATA = [
   { code: "SN", en: "Senegal", cn: "塞內加爾", gpi: 1.936, gti: 1.578, safeIndex: 45, risk: "High", usRank: null },
   { code: "LR", en: "Liberia", cn: "賴比瑞亞", gpi: 1.939, gti: null, safeIndex: 45, risk: "Medium", usRank: null },
   { code: "MW", en: "Malawi", cn: "馬拉威", gpi: 1.955, gti: null, safeIndex: null, risk: null, usRank: null },
-  { code: "JO", en: "Jordan", cn: "約旦", gpi: 1.957, gti: 2.913, safeIndex: 53, risk: "Medium", usRank: 49 },
+  { code: "JO", en: "約旦", cn: "約旦", gpi: 1.957, gti: 2.913, safeIndex: 53, risk: "Medium", usRank: 49 },
   { code: "TZ", en: "Tanzania", cn: "坦尚尼亞", gpi: 1.965, gti: 1.573, safeIndex: null, risk: null, usRank: null },
   { code: "FR", en: "France", cn: "法國", gpi: 1.967, gti: 2.712, safeIndex: 64, risk: "Medium", usRank: 30 },
   { code: "PY", en: "Paraguay", cn: "巴拉圭", gpi: 1.981, gti: 0.073, safeIndex: 45, risk: "Low", usRank: null },

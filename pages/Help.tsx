@@ -3,18 +3,30 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../LanguageContext';
 
+interface ContactItem {
+  name: string;
+  number: string;
+  color: string;
+}
+
+interface ScenarioItem {
+  id: string;
+  icon: string;
+  color: string;
+}
+
 const Help: React.FC = () => {
   const { t } = useLanguage();
   const [activeScenario, setActiveScenario] = useState<'passport' | 'accident' | 'arrest' | null>(null);
 
-  const contacts = [
+  const contacts: ContactItem[] = [
     { name: t('help.c_1'), number: '+861012308', color: 'bg-red-600/80 border-red-500/50' },
     { name: t('help.c_2'), number: '+85366888353', color: 'bg-blue-600/80 border-blue-500/50' },
     { name: t('help.c_3'), number: '+85328573333', color: 'bg-blue-800/80 border-blue-700/50' },
     { name: t('help.c_4'), number: '+85328333000', color: 'bg-orange-500/80 border-orange-500/50' },
   ];
 
-  const scenarios = [
+  const scenarios: ScenarioItem[] = [
     { id: 'passport', icon: '🛂', color: 'bg-yellow-500/20 text-yellow-200 border-yellow-500/30 hover:bg-yellow-500/30' },
     { id: 'accident', icon: '🚑', color: 'bg-red-500/20 text-red-200 border-red-500/30 hover:bg-red-500/30' },
     { id: 'arrest', icon: '👮', color: 'bg-gray-500/20 text-gray-200 border-gray-500/30 hover:bg-gray-500/30' },
@@ -48,7 +60,7 @@ const Help: React.FC = () => {
            <p className="text-xs text-gray-400 mb-3">{t('help.contacts_desc')}</p>
            
            <div className="flex overflow-x-auto gap-3 pb-4 no-scrollbar snap-x">
-              {contacts.map((c, idx) => (
+              {contacts.map((c: ContactItem, idx: number) => (
                 <a 
                   key={idx}
                   href={`tel:${c.number}`}
@@ -69,7 +81,7 @@ const Help: React.FC = () => {
            </h2>
            
            <div className="grid grid-cols-3 gap-3 mb-6">
-              {scenarios.map((s) => (
+              {scenarios.map((s: ScenarioItem) => (
                 <button
                   key={s.id}
                   onClick={() => setActiveScenario(activeScenario === s.id ? null : s.id as any)}

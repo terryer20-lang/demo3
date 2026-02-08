@@ -4,6 +4,13 @@ import { useLanguage } from '../LanguageContext';
 import { CONSULATE_DATA, ConsulateItem, PHONE_DATA, PhoneItem } from '../consulateData';
 import { Link } from 'react-router-dom';
 
+interface HotlineItem {
+  name: string;
+  number: string;
+  color: string;
+  icon: string;
+}
+
 const Emergency: React.FC = () => {
   const [locationStatus, setLocationStatus] = useState<string>('');
   const { t } = useLanguage();
@@ -118,7 +125,7 @@ const Emergency: React.FC = () => {
     }
   };
 
-  const hotlines = [
+  const hotlines: HotlineItem[] = [
     { name: t('emergency.hotline_commissioner'), number: '+853 66888353', color: 'bg-transparent border-blue-500/50', icon: '🏢' },
     { name: t('emergency.hotline_psp'), number: '+853 28573333', color: 'bg-transparent border-blue-700/50', icon: '👮' },
     { name: t('emergency.hotline_tourism'), number: '+853 28333000', color: 'bg-transparent border-orange-500/50', icon: '🏖️' }
@@ -167,7 +174,7 @@ const Emergency: React.FC = () => {
         <div>
            <h3 className="text-sm font-bold text-gray-400 mb-3 px-1 uppercase tracking-wider">{t('emergency.local_hotlines_title')}</h3>
            <div className="grid grid-cols-1 gap-3">
-              {hotlines.map((h, i) => (
+              {hotlines.map((h: HotlineItem, i: number) => (
                 <a 
                   key={i} 
                   href={`tel:${h.number.replace(/\s/g, '')}`} 

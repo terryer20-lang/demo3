@@ -4,6 +4,13 @@ import { useLanguage } from '../LanguageContext';
 import { COUNTRY_RISK_DATA } from '../constants';
 import { Link } from 'react-router-dom';
 
+interface ChecklistItem {
+  id: number;
+  icon: string;
+  title: string;
+  desc: string;
+}
+
 const Prepare: React.FC = () => {
   const { t } = useLanguage();
   const [checkedItems, setCheckedItems] = useState<Record<number, boolean>>({});
@@ -16,7 +23,7 @@ const Prepare: React.FC = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const searchContainerRef = useRef<HTMLDivElement>(null);
 
-  const checklist = [
+  const checklist: ChecklistItem[] = [
     { id: 1, icon: '🛂', title: t('prepare.check_1_t'), desc: t('prepare.check_1_d') },
     { id: 2, icon: '🛡️', title: t('prepare.check_2_t'), desc: t('prepare.check_2_d') },
     { id: 3, icon: '🏥', title: t('prepare.check_3_t'), desc: t('prepare.check_3_d') },
@@ -165,7 +172,7 @@ const Prepare: React.FC = () => {
              <span>📝</span> {t('prepare.check_title')}
            </h2>
            <div className="space-y-3">
-             {checklist.map((item) => (
+             {checklist.map((item: ChecklistItem) => (
                <div 
                  key={item.id}
                  onClick={() => toggleCheck(item.id)}
@@ -209,7 +216,7 @@ const Prepare: React.FC = () => {
              {/* Suggestions Dropdown */}
              {showSuggestions && suggestions.length > 0 && (
                 <div className="absolute top-full left-0 right-0 mt-1 bg-slate-800 rounded-lg shadow-xl border border-white/10 max-h-60 overflow-y-auto z-30">
-                   {suggestions.map((country) => (
+                   {suggestions.map((country: typeof COUNTRY_RISK_DATA[0]) => (
                       <button
                          key={country.code}
                          onClick={() => handleSelectCountry(country)}

@@ -3,6 +3,24 @@ import React, { useEffect } from 'react';
 import { useLanguage } from '../LanguageContext';
 import { useLocation } from 'react-router-dom';
 
+interface LinkItem {
+  label: string;
+  url: string;
+  icon: string;
+}
+
+interface GuideItem {
+  title: string;
+  url: string;
+  color: string;
+  type: string;
+}
+
+interface MediaItem {
+  name: string;
+  src: string;
+}
+
 const Resources: React.FC = () => {
   const { t } = useLanguage();
   const { hash } = useLocation();
@@ -19,7 +37,7 @@ const Resources: React.FC = () => {
     }
   }, [hash]);
 
-  const links = [
+  const links: LinkItem[] = [
     { label: t('resources.link_1'), url: "https://www.fmprc.gov.cn/web/", icon: "🇨🇳" },
     { label: t('resources.link_2'), url: "https://portaldascomunidades.mne.gov.pt/pt/", icon: "🇵🇹" },
     { label: t('resources.link_3'), url: "https://cs.mfa.gov.cn/", icon: "🌏" },
@@ -29,7 +47,7 @@ const Resources: React.FC = () => {
     { label: t('resources.link_7'), url: "https://www.elctp.k12.edu.mo/elctp/", icon: "🏫" },
   ];
 
-  const guides = [
+  const guides: GuideItem[] = [
     { 
       title: t('resources.guide_1_t'), 
       url: "https://drive.google.com/file/d/1vGhf8DCaNA2tocWt9vYK74mGFqeVkxTd/view?usp=sharing",
@@ -92,7 +110,7 @@ const Resources: React.FC = () => {
     }
   ];
 
-  const newMedia = [
+  const newMedia: MediaItem[] = [
     { name: "中國領事服務網", src: "/images/中國領事服務網.webp" },
     { name: "“中國領事”APP", src: "/images/“中國領事”APP.webp" },
     { name: "“中國領事”支付寶小程序", src: "/images/“中國領事”支付寶小程序.webp" },
@@ -127,7 +145,7 @@ const Resources: React.FC = () => {
             <span>📚</span> {t('resources.section_guide')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
-            {guides.map((guide, idx) => (
+            {guides.map((guide: GuideItem, idx: number) => (
               <a 
                 key={idx}
                 href={guide.url}
@@ -182,7 +200,7 @@ const Resources: React.FC = () => {
              <span>📱</span> {t('resources.section_media')}
            </h2>
            <div className="grid grid-cols-3 gap-3">
-              {newMedia.map((media, idx) => (
+              {newMedia.map((media: MediaItem, idx: number) => (
                  <div key={idx} className="flex flex-col items-center">
                     <div className="bg-transparent backdrop-blur-md p-2 rounded-xl shadow-sm border border-white/10 w-full aspect-square flex items-center justify-center overflow-hidden">
                        <img 
@@ -235,7 +253,7 @@ const Resources: React.FC = () => {
              <span>🔗</span> {t('resources.section_links')}
            </h2>
            <div className="flex flex-col gap-3">
-              {links.map((link, idx) => (
+              {links.map((link: LinkItem, idx: number) => (
                 <a 
                   key={idx}
                   href={link.url} 

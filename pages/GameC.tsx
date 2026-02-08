@@ -53,7 +53,6 @@ const GameC: React.FC = () => {
   });
 
   // Extract unique countries for dropdown with explicit typing
-  // Fix for 'unknown' type error: Ensure the result is strictly typed as string[]
   const countries: string[] = Array.from(
     new Set(
       PHONE_DATA

@@ -2,11 +2,18 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../LanguageContext';
 
+interface ComparisonItem {
+  category: string;
+  icon: string;
+  perm: string;
+  nonPerm: string;
+}
+
 const Rights: React.FC = () => {
   const { t } = useLanguage();
   const [activeIdentity, setActiveIdentity] = useState<'perm' | 'non_perm'>('perm');
 
-  const comparisonData = [
+  const comparisonData: ComparisonItem[] = [
     {
       category: "逗留條件",
       icon: "🛃",
@@ -117,7 +124,7 @@ const Rights: React.FC = () => {
 
           {/* Detailed Comparison Table/List */}
           <div className="space-y-3">
-            {comparisonData.map((item, index) => (
+            {comparisonData.map((item: ComparisonItem, index: number) => (
               <div key={index} className="bg-slate-900/60 backdrop-blur-md rounded-xl p-4 shadow-sm border border-white/10 transition-all duration-300">
                 <div className="flex items-center gap-2 mb-3 border-b border-white/10 pb-2">
                   <span className="text-xl">{item.icon}</span>
