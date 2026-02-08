@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import html2canvas from 'html2canvas';
 import { useLanguage } from '../LanguageContext';
-import { PHONE_DATA } from '../consulateData';
+import { PHONE_DATA, PhoneItem } from '../consulateData';
 
 // --- Assets ---
 const MacauLandmarkSVG = () => (
@@ -52,13 +52,13 @@ const GameC: React.FC = () => {
     date: new Date().toLocaleDateString('zh-MO'),
   });
 
-  // Extract unique countries for dropdown
-  const countries = Array.from(new Set(PHONE_DATA.filter(p => p.country).map(p => p.country))).sort();
+  // Extract unique countries for dropdown with explicit typing
+  const countries: string[] = Array.from(new Set(PHONE_DATA.filter((p: PhoneItem) => p.country).map((p: PhoneItem) => p.country))).sort();
 
   // Auto-fill consulate phone when destination changes
   useEffect(() => {
     if (formData.destination) {
-      const match = PHONE_DATA.find(p => p.country === formData.destination);
+      const match = PHONE_DATA.find((p: PhoneItem) => p.country === formData.destination);
       if (match) {
         setFormData(prev => ({ ...prev, consulatePhone: match.number }));
       }
@@ -136,7 +136,7 @@ const GameC: React.FC = () => {
     return (filledCount / fieldsToCheck.length) * 100;
   };
 
-  // Validation Check (Fixed: Checking emergencyContact instead of emergencyPhone)
+  // Validation Check
   const isFormValid = formData.name && formData.emergencyContact && formData.destination;
 
   return (
@@ -275,7 +275,7 @@ const GameC: React.FC = () => {
                       className="w-full bg-transparent border border-white/30 rounded-lg py-2 px-2 text-sm text-white focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all appearance-none"
                    >
                       <option value="" className="bg-slate-900 text-gray-400">請選擇目的地</option>
-                      {countries.map(c => (
+                      {countries.map((c: string) => (
                          <option key={c} value={c} className="bg-slate-900">{c}</option>
                       ))}
                    </select>
@@ -309,6 +309,8 @@ const GameC: React.FC = () => {
           </div>
         )}
 
+        {/* ... (Render code for step 2 remains same, ensuring canvas container is present) */}
+        
         {/* --- Step 2: Result --- */}
         {step === 2 && generatedImage && (
            <div className="animate-fade-in flex flex-col items-center space-y-6">

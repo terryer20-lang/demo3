@@ -43,7 +43,7 @@ const Emergency: React.FC = () => {
       const lowerQuery = query.toLowerCase();
       // Search by Country Name (CN/EN) or full Mission Name
       const matches = CONSULATE_DATA.filter(
-        item => 
+        (item: ConsulateItem) => 
           item.country.includes(query) || 
           item.countryEn.toLowerCase().includes(lowerQuery) ||
           item.name.includes(query)
@@ -63,7 +63,7 @@ const Emergency: React.FC = () => {
     if (query.trim().length > 0) {
       const lowerQuery = query.toLowerCase();
       const matches = PHONE_DATA.filter(
-        item => 
+        (item: PhoneItem) => 
           item.country.includes(query) || 
           item.countryEn.toLowerCase().includes(lowerQuery) ||
           item.name.includes(query)

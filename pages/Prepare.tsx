@@ -68,7 +68,7 @@ const Prepare: React.FC = () => {
     if (query.trim().length > 0) {
       const lowerQuery = query.toLowerCase();
       const matches = COUNTRY_RISK_DATA.filter(
-        c => c.cn.includes(lowerQuery) || c.en.toLowerCase().includes(lowerQuery)
+        (c: typeof COUNTRY_RISK_DATA[0]) => c.cn.includes(lowerQuery) || c.en.toLowerCase().includes(lowerQuery)
       );
       setSuggestions(matches);
       setShowSuggestions(true);

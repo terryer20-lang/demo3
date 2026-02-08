@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MOCK_NOTIFICATIONS, HOT_KNOWLEDGE_LIST } from '../constants';
+import { NotificationItem, KnowledgeItem } from '../types';
 import { useLanguage } from '../LanguageContext';
 
 const Home: React.FC = () => {
@@ -169,7 +170,7 @@ const Home: React.FC = () => {
           </div>
           
           <div className="overflow-x-auto flex gap-4 px-5 pb-4 no-scrollbar snap-x snap-mandatory touch-pan-x">
-            {HOT_KNOWLEDGE_LIST.slice(0, 5).map((item, index) => (
+            {HOT_KNOWLEDGE_LIST.slice(0, 5).map((item: KnowledgeItem, index: number) => (
               <Link key={item.id} to={`/knowledge/${item.id}`} className="flex-none w-[80vw] md:w-96 snap-center group">
                 <div className="bg-transparent backdrop-blur-sm rounded-xl shadow-lg border border-white/30 overflow-hidden hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 transform hover:-translate-y-1">
                   <div className="relative h-40 md:h-48 overflow-hidden bg-gray-900/50">
@@ -219,7 +220,7 @@ const Home: React.FC = () => {
             </div>
 
             <div className="divide-y divide-white/10">
-              {MOCK_NOTIFICATIONS.map((item) => (
+              {MOCK_NOTIFICATIONS.map((item: NotificationItem) => (
                 <div key={item.id} className="p-4 md:grid md:grid-cols-12 md:gap-4 md:items-center hover:bg-white/5 transition-colors block group">
                   {/* Mobile: Date above title */}
                   <div className="mb-1 md:mb-0 md:col-span-3 text-xs text-gray-300 font-en flex items-center gap-2 md:block font-bold">
