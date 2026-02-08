@@ -25,6 +25,10 @@ import GameC from './pages/GameC';
 import GameD from './pages/GameD';
 import GameE from './pages/GameE';
 import GameF from './pages/GameF';
+import GameG from './pages/GameG';
+import GameH from './pages/GameH';
+import GameI from './pages/GameI';
+import GameJ from './pages/GameJ';
 import GameRightsDecoder from './pages/GameRightsDecoder';
 import { LanguageProvider } from './LanguageContext';
 
@@ -65,6 +69,10 @@ const AppRoutes = () => {
           <Route path="/game-zone/d" element={<GameD />} />
           <Route path="/game-zone/e" element={<GameE />} />
           <Route path="/game-zone/f" element={<GameF />} />
+          <Route path="/game-zone/g" element={<GameG />} />
+          <Route path="/game-zone/h" element={<GameH />} />
+          <Route path="/game-zone/i" element={<GameI />} />
+          <Route path="/game-zone/j" element={<GameJ />} />
           
           <Route path="/safety-card" element={<GameC />} />
           
