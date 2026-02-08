@@ -1,6 +1,6 @@
+
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useLanguage } from '../LanguageContext';
 
 // --- Types ---
 type Category = 'red' | 'yellow' | 'blue';
@@ -46,7 +46,6 @@ const QUESTIONS: Question[] = [
 
 const GameE: React.FC = () => {
   const navigate = useNavigate();
-  const { t } = useLanguage();
   
   // Game State
   const [gameState, setGameState] = useState<'intro' | 'playing' | 'gameover'>('intro');
@@ -117,12 +116,6 @@ const GameE: React.FC = () => {
     };
   }, [gameState, gameLoop]);
 
-  // Remove items that fall off screen (handled via onAnimationEnd in CSS usually, 
-  // but here we need logic. Simplified: The React component handles the animation, 
-  // we just need to know when to remove it from state to prevent memory leaks?
-  // Actually, strictly purely CSS animation makes "state removal" hard without a timer.
-  // We will use a `setTimeout` inside the MailItem component to self-destruct if not dragged.
-
   const handleCorrect = () => {
     setScore(s => {
       const newScore = s + 10;
@@ -181,9 +174,6 @@ const GameE: React.FC = () => {
 
   // --- Sub-Component for individual falling item ---
   const FallingItem = ({ item }: { item: MailItem }) => {
-    const [pos, setPos] = useState({ x: 0, y: 0 }); // Offset during drag
-    // Initial Spawn Position is handled by CSS left
-    
     // Self-destruct if falls out of bounds (animation duration)
     useEffect(() => {
       if (!item.isDragging) {
@@ -198,27 +188,6 @@ const GameE: React.FC = () => {
       }
     }, [item.isDragging, item.speed, item.id]);
 
-    const handleTouchStart = (e: React.TouchEvent | React.MouseEvent) => {
-      e.stopPropagation(); // Prevent bg scroll
-      // Find the element's current visual position to avoid snapping
-      const element = e.currentTarget as HTMLElement;
-      const rect = element.getBoundingClientRect();
-      
-      // Update global item state to dragging
-      setItems(prev => prev.map(i => i.id === item.id ? { ...i, isDragging: true } : i));
-      
-      // Set local position to current visual coordinates relative to viewport
-      // We need to convert this to fixed position style
-      // Actually, easier: transform translate relative to touch delta? 
-      // Let's stick to: On drag start, element becomes fixed/absolute at current XY.
-    };
-
-    // Note: The main logic for "Follow Finger" is better handled globally or via specific drag lib.
-    // Implementing a simple version here:
-    // When dragging, we use a fixed overlay driven by `activeDragItem` state in parent?
-    // Let's try separate approach:
-    // This component purely handles the falling animation.
-    // If user touches it, we remove it from the list and create a "FloatingItem" that follows cursor.
     return (
         <div
             className={`absolute top-[-100px] cursor-grab active:cursor-grabbing select-none z-20 touch-none`}
