@@ -210,7 +210,7 @@ const Emergency: React.FC = () => {
              {/* Suggestions Dropdown */}
              {showSuggestions && suggestions.length > 0 && (
                 <div className="absolute top-full left-0 right-0 mt-1 bg-slate-900/90 rounded-lg shadow-xl border border-white/20 max-h-60 overflow-y-auto z-30 backdrop-blur-xl">
-                   {suggestions.map((item, index) => (
+                   {suggestions.map((item: ConsulateItem, index: number) => (
                       <a
                          key={index}
                          href={item.url}
@@ -271,7 +271,7 @@ const Emergency: React.FC = () => {
              {/* Suggestions Dropdown */}
              {showCallSuggestions && callSuggestions.length > 0 && (
                 <div className="absolute top-full left-0 right-0 mt-1 bg-slate-900/90 rounded-lg shadow-xl border border-white/20 max-h-60 overflow-y-auto z-30 backdrop-blur-xl">
-                   {callSuggestions.map((item, index) => (
+                   {callSuggestions.map((item: PhoneItem, index: number) => (
                       <a
                          key={index}
                          href={`tel:${item.number}`}

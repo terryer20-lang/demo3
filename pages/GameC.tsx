@@ -53,7 +53,14 @@ const GameC: React.FC = () => {
   });
 
   // Extract unique countries for dropdown with explicit typing
-  const countries: string[] = Array.from(new Set(PHONE_DATA.filter((p: PhoneItem) => p.country).map((p: PhoneItem) => p.country))).sort();
+  // Fix for 'unknown' type error: Ensure the result is strictly typed as string[]
+  const countries: string[] = Array.from(
+    new Set(
+      PHONE_DATA
+        .filter((p: PhoneItem) => !!p.country)
+        .map((p: PhoneItem) => p.country)
+    )
+  ).sort() as string[];
 
   // Auto-fill consulate phone when destination changes
   useEffect(() => {
@@ -137,7 +144,7 @@ const GameC: React.FC = () => {
   };
 
   // Validation Check
-  const isFormValid = formData.name && formData.emergencyContact && formData.destination;
+  const isFormValid = !!(formData.name && formData.emergencyContact && formData.destination);
 
   return (
     <div className="min-h-screen bg-transparent pt-24 pb-10 px-4 font-sans relative overflow-hidden">
@@ -308,8 +315,6 @@ const GameC: React.FC = () => {
              </button>
           </div>
         )}
-
-        {/* ... (Render code for step 2 remains same, ensuring canvas container is present) */}
         
         {/* --- Step 2: Result --- */}
         {step === 2 && generatedImage && (
@@ -345,7 +350,6 @@ const GameC: React.FC = () => {
         )}
 
         {/* --- Invisible Render Canvas --- */}
-        {/* This div is rendered off-screen but visible to html2canvas */}
         <div className="fixed left-[-9999px] top-0 pointer-events-none">
            <div 
              ref={cardRef}
