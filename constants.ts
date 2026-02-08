@@ -15,6 +15,7 @@ export const MENU_ITEMS: MenuItem[] = [
   {id: "past-notifications", icon: "📨", text: "past-notifications", path: "/past-notifications"},
   {id: "events", icon: "📅", text: "events", path: "/events"},
   {id: "resources", icon: "📚", text: "resources", path: "/resources"},
+  {id: "safety-card", icon: "🪪", text: "safety-card", path: "/safety-card"},
   {id: "game-zone", icon: "🎮", text: "game-zone", path: "/game-zone"},
   {id: "contact", icon: "📞", text: "contact", path: "/contact"}
 ];

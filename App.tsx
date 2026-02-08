@@ -22,6 +22,8 @@ import GameZone from './pages/GameZone';
 import GameA from './pages/GameA';
 import GameB from './pages/GameB';
 import GameC from './pages/GameC';
+import GameD from './pages/GameD';
+import GameRightsDecoder from './pages/GameRightsDecoder';
 import { LanguageProvider } from './LanguageContext';
 
 // Component to handle scroll to top on route change
@@ -57,7 +59,10 @@ const AppRoutes = () => {
           <Route path="/game-zone" element={<GameZone />} />
           <Route path="/game-zone/a" element={<GameA />} />
           <Route path="/game-zone/b" element={<GameB />} />
-          <Route path="/game-zone/c" element={<GameC />} />
+          <Route path="/game-zone/c" element={<GameRightsDecoder />} />
+          <Route path="/game-zone/d" element={<GameD />} />
+          
+          <Route path="/safety-card" element={<GameC />} />
           
           <Route path="/notification/:id" element={<NotificationDetail />} />
           <Route path="/knowledge/:id" element={<KnowledgeDetail />} />

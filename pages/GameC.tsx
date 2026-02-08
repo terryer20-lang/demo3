@@ -150,13 +150,13 @@ const GameC: React.FC = () => {
         {/* Header Navigation */}
         <div className="flex items-center justify-between mb-6">
            <button 
-              onClick={() => navigate('/game-zone')} 
+              onClick={() => navigate('/')} 
               className="text-gray-400 font-bold flex items-center gap-1 hover:text-white transition-colors text-sm bg-white/5 px-3 py-1.5 rounded-lg border border-white/10"
            >
               &larr; {t('app.back')}
            </button>
            <h1 className="text-xl font-black text-white tracking-wider drop-shadow-md">
-             我的安全應急卡
+             {t('menu.safety-card')}
            </h1>
            <div className="w-16"></div>
         </div>

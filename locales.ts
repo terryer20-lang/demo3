@@ -36,6 +36,7 @@ export const translations = {
       "hot-knowledge": "領保燙知識",
       "events": "活動日程",
       "resources": "資源專區",
+      "safety-card": "製作我的安全應急卡",
       "game-zone": "遊戲專區",
       "contact": "聯絡我們"
     },

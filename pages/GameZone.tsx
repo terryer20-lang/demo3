@@ -16,18 +16,20 @@ const GameZone: React.FC = () => {
       navigate('/game-zone/b');
     } else if (game === 'C') {
       navigate('/game-zone/c');
+    } else if (game === 'D') {
+      navigate('/game-zone/d');
     }
-    // Future games can be handled here
   };
 
   const getGameTitle = (game: string) => {
     if (game === 'A') return '全球領事守護者';
     if (game === 'B') return '緊急聯絡配對';
-    if (game === 'C') return '我的安全應急卡';
+    if (game === 'C') return '權利解碼員';
+    if (game === 'D') return '安全路徑規劃師';
     return `遊戲 ${game}`;
   }
 
-  const isPlayable = (game: string) => ['A', 'B', 'C'].includes(game);
+  const isPlayable = (game: string) => ['A', 'B', 'C', 'D'].includes(game);
 
   return (
     <div className="min-h-screen bg-transparent pt-24 pb-10 px-4 animate-fade-in font-sans">

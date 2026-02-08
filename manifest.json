@@ -1,20 +1,29 @@
 {
   "name": "智保同行",
   "short_name": "智保同行",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
+  "description": "Official Macau Consular Protection mobile web application",
   "theme_color": "#CC0000",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "orientation": "portrait",
   "icons": [
     {
-      "src": "https://picsum.photos/192/192",
+      "src": "/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://picsum.photos/512/512",
+      "src": "/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      purpose: "maskable"
     }
   ]
 }
