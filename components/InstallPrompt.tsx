@@ -103,7 +103,7 @@ const InstallPrompt: React.FC = () => {
                     onClick={handleInstallClick}
                     className="w-full py-3 bg-gradient-to-r from-brand-red to-orange-600 text-white font-bold rounded-xl shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-2"
                 >
-                    <span>📲</span> 立即新增
+                    <span>📲</span> 點擊新增至主頁面
                 </button>
             )}
             
