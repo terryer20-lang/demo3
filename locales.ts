@@ -38,7 +38,8 @@ export const translations = {
       "resources": "資源專區",
       "safety-card": "製作我的安全應急卡",
       "game-zone": "遊戲專區",
-      "contact": "聯絡我們"
+      "contact": "聯絡我們",
+      "add-to-home": "新增至主頁面"
     },
     home: {
       hero: {

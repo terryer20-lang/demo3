@@ -67,7 +67,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {/* Logo Section */}
         <Link to="/" className="flex items-center gap-3 group z-50 relative">
           <div className="w-10 h-10 md:w-11 md:h-11 rounded-full border-2 border-cyan-500/50 bg-black/50 shadow-[0_0_15px_rgba(6,182,212,0.5)] flex items-center justify-center overflow-hidden shrink-0 group-hover:scale-105 transition-transform backdrop-blur-sm">
-             <img src="/images/Escudos de Quíron.webp" alt="Logo" className="w-full h-full object-cover" />
+             <img src="/icon-512x512.png" alt="Logo" className="w-full h-full object-cover" />
           </div>
           <span className="font-bold text-white text-lg md:text-xl tracking-wide whitespace-nowrap drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] text-shadow-md">
             {t('app.title')}
@@ -125,24 +125,31 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 key={item.id} 
                 to={item.path}
                 onClick={() => setIsMenuOpen(false)}
-                className={`flex flex-col items-center gap-2 group animate-fade-in`}
+                className={`flex flex-col items-center gap-2 group animate-fade-in ${item.id === 'add-to-home' ? 'col-span-4' : ''}`}
                 style={{ animationDelay: `${index * 30}ms` }}
               >
                 {/* App Icon Shape */}
                 <div 
-                  className={`w-14 h-14 md:w-16 md:h-16 rounded-[18px] flex items-center justify-center text-2xl md:text-3xl shadow-lg border transition-all duration-200 group-active:scale-90
+                  className={`w-14 h-14 md:w-16 md:h-16 rounded-[18px] flex items-center justify-center text-2xl md:text-3xl shadow-lg border transition-all duration-300 group-active:scale-90 relative
                     ${location.pathname === item.path 
-                      ? 'bg-white text-brand-red border-white shadow-[0_0_20px_rgba(255,255,255,0.4)] scale-105' 
+                      ? 'bg-white text-brand-red border-white shadow-[0_0_30px_rgba(255,255,255,0.6)] scale-110 z-10 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]' 
                       : 'bg-white/10 backdrop-blur-md text-white border-white/20 group-hover:bg-white/20 group-hover:border-white/40'
-                    }`}
+                    } ${item.id === 'add-to-home' ? 'w-full max-w-[200px] h-14 rounded-full flex-row gap-3' : ''}`}
                 >
-                  {item.icon}
+                  {/* Extra glow layer for active item */}
+                  {location.pathname === item.path && (
+                    <div className="absolute inset-0 rounded-[18px] ring-4 ring-white/30 animate-ping opacity-30"></div>
+                  )}
+                  {item.icon} 
+                  {item.id === 'add-to-home' && <span className="text-sm font-bold">{t(`menu.${item.id}`)}</span>}
                 </div>
                 
-                {/* Label */}
-                <span className={`text-[10px] md:text-xs font-bold text-center leading-tight break-words w-full px-0.5 line-clamp-2 ${location.pathname === item.path ? 'text-brand-red' : 'text-gray-300'}`}>
-                  {t(`menu.${item.id}`)}
-                </span>
+                {/* Label - Hide for the full width button since it's inside */}
+                {item.id !== 'add-to-home' && (
+                  <span className={`text-[10px] md:text-xs font-bold text-center leading-tight break-words w-full px-0.5 line-clamp-2 transition-colors duration-300 ${location.pathname === item.path ? 'text-brand-red scale-105' : 'text-gray-300'}`}>
+                    {t(`menu.${item.id}`)}
+                  </span>
+                )}
               </Link>
             ))}
           </div>

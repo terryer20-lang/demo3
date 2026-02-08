@@ -1,3 +1,4 @@
+
 import { MenuItem, ChallengeQuestion, SafetyQuestion, NotificationItem, KnowledgeCard, KnowledgeItem } from './types';
 
 export const MENU_ITEMS: MenuItem[] = [
@@ -16,7 +17,8 @@ export const MENU_ITEMS: MenuItem[] = [
   {id: "resources", icon: "📚", text: "resources", path: "/resources"},
   {id: "safety-card", icon: "🪪", text: "safety-card", path: "/safety-card"},
   {id: "game-zone", icon: "🎮", text: "game-zone", path: "/game-zone"},
-  {id: "contact", icon: "📞", text: "contact", path: "/contact"}
+  {id: "contact", icon: "📞", text: "contact", path: "/contact"},
+  {id: "add-to-home", icon: "📲", text: "add-to-home", path: "/add-to-home"}
 ];
 
 export const EXTERNAL_LINKS = {

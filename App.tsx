@@ -30,6 +30,7 @@ import GameH from './pages/GameH';
 import GameI from './pages/GameI';
 import GameJ from './pages/GameJ';
 import GameRightsDecoder from './pages/GameRightsDecoder';
+import AddToHome from './pages/AddToHome';
 import { LanguageProvider } from './LanguageContext';
 
 // Component to handle scroll to top on route change
@@ -62,6 +63,7 @@ const AppRoutes = () => {
           <Route path="/past-notifications" element={<PastNotifications />} />
           <Route path="/hot-knowledge" element={<HotKnowledge />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/add-to-home" element={<AddToHome />} />
           <Route path="/game-zone" element={<GameZone />} />
           <Route path="/game-zone/a" element={<GameA />} />
           <Route path="/game-zone/b" element={<GameB />} />
