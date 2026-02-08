@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
+
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../LanguageContext';
 
@@ -79,7 +80,7 @@ const GameF: React.FC = () => {
   const [placements, setPlacements] = useState<Record<string, string>>({});
   const [feedback, setFeedback] = useState<{ id: string, type: 'success' | 'error', msg: string } | null>(null);
   const [dragState, setDragState] = useState<{ cardId: string, x: number, y: number } | null>(null);
-  const [completedCount, setCompletedCount] = useState(0);
+  const [_completedCount, setCompletedCount] = useState(0);
 
   // Refs
   const svgRef = useRef<SVGSVGElement>(null);
@@ -149,7 +150,6 @@ const GameF: React.FC = () => {
   };
 
   const validate = () => {
-    let allCorrect = true;
     let newCompleted = 0;
 
     // Iterate through all regions to see if they have the right card
@@ -158,7 +158,6 @@ const GameF: React.FC = () => {
       const placedCardId = Object.keys(placements).find(key => placements[key] === region.id);
       
       if (!placedCardId) {
-        allCorrect = false; // Missing card
         continue;
       }
 
@@ -166,9 +165,6 @@ const GameF: React.FC = () => {
       const card = CARDS.find(c => c.id === placedCardId);
       if (card?.id === region.riskCauseId) {
         newCompleted++;
-      } else {
-        allCorrect = false;
-        // Shake feedback logic could go here
       }
     }
 

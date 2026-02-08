@@ -85,7 +85,7 @@ const GameJ: React.FC = () => {
   const [matches, setMatches] = useState<Record<string, string>>({}); // leftId -> rightId
   const [wrongLink, setWrongLink] = useState<{left: string, right: string} | null>(null);
   const [gameState, setGameState] = useState<'intro' | 'playing' | 'summary'>('intro');
-  const [showConsularInfo, setShowConsularInfo] = useState(false);
+  const [_showConsularInfo, setShowConsularInfo] = useState(false);
 
   // Refs for line drawing
   const containerRef = useRef<HTMLDivElement>(null);

@@ -56,7 +56,6 @@ interface WordNode {
 
 // Visual Config
 const COLORS = ['#94a3b8', '#cbd5e1', '#64748b', '#475569']; // Slate shades for distractors
-const TARGET_COLOR = '#fbbf24'; // Amber for targets (hidden logic)
 const SVG_WIDTH = 350;
 const SVG_HEIGHT = 400;
 
@@ -81,7 +80,7 @@ const computeLayout = (words: string[], targetPhrase: string): WordNode[] => {
   // Combine all characters/words
   let allItems = words.map(w => ({ text: w, isTarget: false }));
   // Add target chars (shuffled in later, but logic handles them)
-  targets.forEach((char, idx) => {
+  targets.forEach((char) => {
      // Ensure targets are unique instances even if char repeats
      allItems.push({ text: char, isTarget: true });
   });
@@ -410,7 +409,7 @@ const GameG: React.FC = () => {
               <div className="h-24 flex flex-col items-center justify-center bg-black/20 backdrop-blur-sm border-y border-white/5 mb-4 shrink-0">
                  <div className="text-xs text-gray-400 mb-2 uppercase tracking-widest">Target Phrase</div>
                  <div className="flex gap-2">
-                    {targetChars.map((char, idx) => {
+                    {targetChars.map((_char, idx) => {
                        const found = foundChars.length > idx; // Simplified sequential fill
                        // More complex logic: check if the specifically found words match specific chars.
                        // For this game, we just fill slots sequentially as user finds correct words.
