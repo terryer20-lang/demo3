@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { MOCK_NOTIFICATIONS, HOT_KNOWLEDGE_LIST } from '../constants';
 import { NotificationItem, KnowledgeItem } from '../types';
 import { useLanguage } from '../LanguageContext';
+import InstallPrompt from '../components/InstallPrompt';
 
 const Home: React.FC = () => {
   const { t } = useLanguage();
@@ -23,6 +24,9 @@ const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-transparent">
+      {/* PWA Install Prompt */}
+      <InstallPrompt />
+
       {/* Hero Section */}
       <section className="relative min-h-[100dvh] w-full flex flex-col md:flex-row">
         
