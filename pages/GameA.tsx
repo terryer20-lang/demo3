@@ -170,7 +170,7 @@ const GameA: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState(60);
   const [score, setScore] = useState(0);
   const [badges, setBadges] = useState<string[]>([]); // Array of country codes
-  const [selectedOption, setSelectedOption] = useState<number | null>(null);
+  const [_selectedOption, setSelectedOption] = useState<number | null>(null);
   const [isCorrect, setIsCorrect] = useState(false);
   
   const timerRef = useRef<number | null>(null);
@@ -399,7 +399,6 @@ const GameA: React.FC = () => {
   const renderSummaryScreen = () => {
     const total = shuffledScenarios.length;
     const correctCount = badges.length;
-    const percentage = Math.round((correctCount / total) * 100);
     const isFullScore = correctCount === total;
     
     return (

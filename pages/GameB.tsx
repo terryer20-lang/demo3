@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useLanguage } from '../LanguageContext';
 
 // Game Configuration
 const GAME_DURATION = 90; // seconds
@@ -26,7 +25,6 @@ const RAW_PAIRS = [
 
 const GameB: React.FC = () => {
   const navigate = useNavigate();
-  const { t } = useLanguage();
 
   // State
   const [cards, setCards] = useState<CardData[]>([]);
