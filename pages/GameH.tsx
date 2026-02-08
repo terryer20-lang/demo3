@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useLanguage } from '../LanguageContext';
+// Removed unused useLanguage import
 
 // --- Types ---
 
@@ -108,7 +108,6 @@ const SCENARIOS: ScenarioData[] = [
 
 const GameH: React.FC = () => {
   const navigate = useNavigate();
-  // const { t } = useLanguage(); // Removed unused t
 
   const [currentScenarioIdx, setCurrentScenarioIdx] = useState(0);
   const [stage, setStage] = useState<'intro' | 'context' | 'emotion' | 'action' | 'feedback' | 'resources'>('intro');
