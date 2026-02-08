@@ -23,6 +23,7 @@ export const translations = {
     },
     menu: {
       title: "功能菜單",
+      "home": "主頁",
       "star-challenge": "領保之星挑戰賽",
       "safety-test": "海外旅行安全指數小測試",
       "going-abroad": "我即將出國",
@@ -35,6 +36,7 @@ export const translations = {
       "hot-knowledge": "領保燙知識",
       "events": "活動日程",
       "resources": "資源專區",
+      "game-zone": "遊戲專區",
       "contact": "聯絡我們"
     },
     home: {
@@ -50,6 +52,8 @@ export const translations = {
         scroll: "下滑瀏覽更多"
       },
       quick: {
+        challenge: "領保之星挑戰賽",
+        game: "遊戲專區",
         help: "我在海外遇到困難",
         prepare: "我即將出國",
         test: "海外旅行安全指數小測試",

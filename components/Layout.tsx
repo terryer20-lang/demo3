@@ -132,7 +132,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <div 
                   className={`w-14 h-14 md:w-16 md:h-16 rounded-[18px] flex items-center justify-center text-2xl md:text-3xl shadow-lg border transition-all duration-200 group-active:scale-90
                     ${location.pathname === item.path 
-                      ? 'bg-brand-red text-white border-brand-red shadow-brand-red/50 scale-105' 
+                      ? 'bg-white text-brand-red border-white shadow-[0_0_20px_rgba(255,255,255,0.4)] scale-105' 
                       : 'bg-white/10 backdrop-blur-md text-white border-white/20 group-hover:bg-white/20 group-hover:border-white/40'
                     }`}
                 >

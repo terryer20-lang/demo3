@@ -25,22 +25,22 @@ const ParticleBackground: React.FC = () => {
       size: number;
       color: string;
 
-      constructor() {
-        this.x = Math.random() * canvas!.width;
-        this.y = Math.random() * canvas!.height;
-        this.vx = (Math.random() - 0.5) * 0.8; // Increased speed slightly
-        this.vy = (Math.random() - 0.5) * 0.8;
+      constructor(width: number, height: number) {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.5; // Slower, smoother movement
+        this.vy = (Math.random() - 0.5) * 0.5;
         this.size = Math.random() * 2 + 1;
         this.color = colors[Math.floor(Math.random() * colors.length)];
       }
 
-      update() {
+      update(width: number, height: number) {
         this.x += this.vx;
         this.y += this.vy;
 
         // Bounce off edges
-        if (this.x < 0 || this.x > canvas!.width) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas!.height) this.vy *= -1;
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
 
         // Mouse interaction
         const dx = mouse.x - this.x;
@@ -50,7 +50,7 @@ const ParticleBackground: React.FC = () => {
         if (distance < 150) {
             const angle = Math.atan2(dy, dx);
             const force = (150 - distance) / 150;
-            const pushX = Math.cos(angle) * force * 1.5; // Slight push
+            const pushX = Math.cos(angle) * force * 1.5;
             const pushY = Math.sin(angle) * force * 1.5;
             
             this.x -= pushX;
@@ -69,15 +69,24 @@ const ParticleBackground: React.FC = () => {
 
     const init = () => {
       particles = [];
-      const particleCount = Math.min(window.innerWidth / 5, 200); // Increased density significantly
+      // Use logical dimensions for particle positioning
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      
+      const particleCount = Math.min(width / 5, 200); 
       for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
+        particles.push(new Particle(width, height));
       }
     };
 
     const animate = () => {
       if (!ctx || !canvas) return;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Use logical dimensions for clearing
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      ctx.clearRect(0, 0, width, height);
       
       // Draw connections
       for (let i = 0; i < particles.length; i++) {
@@ -86,7 +95,7 @@ const ParticleBackground: React.FC = () => {
           const dy = particles[i].y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 130) { // Increased connection distance slightly
+          if (distance < 130) {
             ctx.beginPath();
             ctx.strokeStyle = `rgba(100, 200, 255, ${1 - distance / 130})`;
             ctx.lineWidth = 0.5;
@@ -98,7 +107,7 @@ const ParticleBackground: React.FC = () => {
       }
 
       particles.forEach(particle => {
-        particle.update();
+        particle.update(width, height);
         particle.draw();
       });
 
@@ -106,8 +115,20 @@ const ParticleBackground: React.FC = () => {
     };
 
     const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      // Handle High DPI displays
+      const dpr = window.devicePixelRatio || 1;
+      
+      // Set physical dimensions
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      
+      // Set CSS dimensions
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+      
+      // Scale drawing context to match DPI
+      ctx.scale(dpr, dpr);
+      
       init();
     };
 

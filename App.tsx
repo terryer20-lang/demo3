@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
@@ -17,6 +18,10 @@ import NotificationDetail from './pages/NotificationDetail';
 import HotKnowledge from './pages/HotKnowledge';
 import KnowledgeDetail from './pages/KnowledgeDetail';
 import Contact from './pages/Contact';
+import GameZone from './pages/GameZone';
+import GameA from './pages/GameA';
+import GameB from './pages/GameB';
+import GameC from './pages/GameC';
 import { LanguageProvider } from './LanguageContext';
 
 // Component to handle scroll to top on route change
@@ -49,6 +54,10 @@ const AppRoutes = () => {
           <Route path="/past-notifications" element={<PastNotifications />} />
           <Route path="/hot-knowledge" element={<HotKnowledge />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/game-zone" element={<GameZone />} />
+          <Route path="/game-zone/a" element={<GameA />} />
+          <Route path="/game-zone/b" element={<GameB />} />
+          <Route path="/game-zone/c" element={<GameC />} />
           
           <Route path="/notification/:id" element={<NotificationDetail />} />
           <Route path="/knowledge/:id" element={<KnowledgeDetail />} />

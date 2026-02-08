@@ -1,8 +1,8 @@
 
-
 import { MenuItem, ChallengeQuestion, SafetyQuestion, NotificationItem, KnowledgeCard, KnowledgeItem } from './types';
 
 export const MENU_ITEMS: MenuItem[] = [
+  {id: "home", icon: "🏠", text: "home", path: "/"},
   {id: "star-challenge", icon: "⭐", text: "challenge", path: "/challenge"},
   {id: "safety-test", icon: "📊", text: "safety", path: "/safety-index"},
   {id: "going-abroad", icon: "✈️", text: "prepare", path: "/prepare"},
@@ -15,6 +15,7 @@ export const MENU_ITEMS: MenuItem[] = [
   {id: "past-notifications", icon: "📨", text: "past-notifications", path: "/past-notifications"},
   {id: "events", icon: "📅", text: "events", path: "/events"},
   {id: "resources", icon: "📚", text: "resources", path: "/resources"},
+  {id: "game-zone", icon: "🎮", text: "game-zone", path: "/game-zone"},
   {id: "contact", icon: "📞", text: "contact", path: "/contact"}
 ];
 
@@ -147,8 +148,8 @@ export const COUNTRY_RISK_DATA = [
   { code: "AM", en: "Armenia", cn: "亞美尼亞", gpi: 1.893, gti: 0.72, safeIndex: 60, risk: "Low", usRank: null },
   { code: "MG", en: "Madagascar", cn: "馬達加斯加", gpi: 1.895, gti: null, safeIndex: 49, risk: "Medium", usRank: null },
   { code: "BA", en: "Bosnia and Herzegovina", cn: "波黑", gpi: 1.895, gti: 1.218, safeIndex: 48, risk: "Low", usRank: null },
-  { code: "GH", en: "Ghana", cn: "迦納", gpi: 1.898, gti: null, safeIndex: 73, risk: "Medium", usRank: 70 },
-  { code: "CL", en: "Chile", cn: "智利", gpi: 1.899, gti: 5.162, safeIndex: 79, risk: "Medium", usRank: 57 },
+  { code: "GH", en: "迦納", cn: "迦納", gpi: 1.898, gti: null, safeIndex: 73, risk: "Medium", usRank: 70 },
+  { code: "CL", en: "智利", cn: "智利", gpi: 1.899, gti: 5.162, safeIndex: 79, risk: "Medium", usRank: 57 },
   { code: "ZM", en: "Zambia", cn: "尚比亞", gpi: 1.914, gti: null, safeIndex: 52, risk: "Medium", usRank: null },
   { code: "RS", en: "Serbia", cn: "塞爾維亞", gpi: 1.914, gti: 0.582, safeIndex: 77, risk: "Medium", usRank: 66 },
   { code: "MD", en: "Moldova", cn: "莫爾達瓦", gpi: 1.918, gti: null, safeIndex: 67, risk: "Medium", usRank: null },

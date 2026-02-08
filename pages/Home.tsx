@@ -28,92 +28,84 @@ const Home: React.FC = () => {
         {/* Column 1: Consular Protection */}
         <Link 
           to="/protection" 
-          className="group relative flex-1 bg-transparent border-r border-white/10 flex items-center justify-center transition-all duration-300 py-10 md:py-0 overflow-hidden animate-slide-up hover:flex-[1.2]"
+          className="group relative flex-1 bg-transparent border-r border-white/10 flex items-center justify-center transition-all duration-300 py-10 md:py-0 overflow-hidden animate-slide-up"
           style={{ animationDelay: '0ms' }}
         >
           <div className="absolute inset-0 z-0">
             <img 
               src="/images/A1.webp" 
               alt="Consular Protection" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover"
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 group-hover:bg-black/40 transition-colors duration-300 z-10"></div>
-          <div className="absolute inset-0 border-2 border-transparent group-hover:border-cyan-500/50 transition-all z-20 m-2 rounded-xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 z-10"></div>
 
           <div className="relative z-20 text-center text-white p-4 flex flex-col items-center justify-center h-full">
-            <h2 className="text-2xl md:text-4xl font-black tracking-wide drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] group-hover:text-cyan-400 transition-colors">{t('home.hero.protection')}</h2>
-            <div className="h-0.5 w-0 group-hover:w-16 bg-cyan-400 transition-all duration-500 mt-2"></div>
+            <h2 className="text-2xl md:text-4xl font-black tracking-wide drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]">{t('home.hero.protection')}</h2>
           </div>
         </Link>
 
         {/* Column 2: Resident Rights */}
         <Link 
           to="/rights" 
-          className="group relative flex-1 bg-transparent border-r border-white/10 flex items-center justify-center transition-all duration-300 py-10 md:py-0 overflow-hidden animate-slide-up hover:flex-[1.2]"
+          className="group relative flex-1 bg-transparent border-r border-white/10 flex items-center justify-center transition-all duration-300 py-10 md:py-0 overflow-hidden animate-slide-up"
           style={{ animationDelay: '100ms' }}
         >
           <div className="absolute inset-0 z-0">
              <img 
               src="/images/A2.webp" 
               alt="Resident Rights" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover"
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 group-hover:bg-black/40 transition-colors duration-300 z-10"></div>
-          <div className="absolute inset-0 border-2 border-transparent group-hover:border-green-500/50 transition-all z-20 m-2 rounded-xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 z-10"></div>
 
           <div className="relative z-20 text-center text-white p-4 flex flex-col items-center justify-center h-full">
-            <h2 className="text-2xl md:text-4xl font-black tracking-wide drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] group-hover:text-green-400 transition-colors">{t('home.hero.rights')}</h2>
-            <div className="h-0.5 w-0 group-hover:w-16 bg-green-400 transition-all duration-500 mt-2"></div>
+            <h2 className="text-2xl md:text-4xl font-black tracking-wide drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]">{t('home.hero.rights')}</h2>
           </div>
         </Link>
 
         {/* Column 3: Events */}
         <Link 
           to="/events" 
-          className="group relative flex-1 bg-transparent border-r border-white/10 flex items-center justify-center transition-all duration-300 py-10 md:py-0 overflow-hidden animate-slide-up hover:flex-[1.2]"
+          className="group relative flex-1 bg-transparent border-r border-white/10 flex items-center justify-center transition-all duration-300 py-10 md:py-0 overflow-hidden animate-slide-up"
           style={{ animationDelay: '200ms' }}
         >
           <div className="absolute inset-0 z-0">
              <img 
               src="/images/A3.webp" 
               alt="Events" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover"
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 group-hover:bg-black/40 transition-colors duration-300 z-10"></div>
-          <div className="absolute inset-0 border-2 border-transparent group-hover:border-yellow-500/50 transition-all z-20 m-2 rounded-xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 z-10"></div>
 
           <div className="relative z-20 text-center text-white p-4 flex flex-col items-center justify-center h-full">
-            <h2 className="text-2xl md:text-4xl font-black tracking-wide drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] group-hover:text-yellow-400 transition-colors">{t('home.hero.alerts')}</h2>
-            <div className="h-0.5 w-0 group-hover:w-16 bg-yellow-400 transition-all duration-500 mt-2"></div>
+            <h2 className="text-2xl md:text-4xl font-black tracking-wide drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]">{t('home.hero.alerts')}</h2>
           </div>
         </Link>
 
         {/* Column 4: Resources */}
         <Link 
           to="/resources" 
-          className="group relative flex-1 bg-transparent flex items-center justify-center transition-all duration-300 py-10 md:py-0 overflow-hidden animate-slide-up hover:flex-[1.2]"
+          className="group relative flex-1 bg-transparent flex items-center justify-center transition-all duration-300 py-10 md:py-0 overflow-hidden animate-slide-up"
           style={{ animationDelay: '300ms' }}
         >
           <div className="absolute inset-0 z-0">
              <img 
               src="/images/A4.webp" 
               alt="Resources" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover"
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 group-hover:bg-black/40 transition-colors duration-300 z-10"></div>
-          <div className="absolute inset-0 border-2 border-transparent group-hover:border-purple-500/50 transition-all z-20 m-2 rounded-xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 z-10"></div>
 
           <div className="relative z-20 text-center text-white p-4 flex flex-col items-center justify-center h-full">
-            <h2 className="text-2xl md:text-4xl font-black tracking-wide drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] group-hover:text-purple-400 transition-colors">{t('home.hero.emergency')}</h2>
-            <div className="h-0.5 w-0 group-hover:w-16 bg-purple-400 transition-all duration-500 mt-2"></div>
+            <h2 className="text-2xl md:text-4xl font-black tracking-wide drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]">{t('home.hero.emergency')}</h2>
           </div>
         </Link>
 
@@ -135,7 +127,20 @@ const Home: React.FC = () => {
       <div id="home-content" className="relative z-10 w-full mt-0 shadow-none pb-10 bg-transparent">
         
         {/* Quick Access Buttons */}
-        <section className="px-4 py-8 pb-4">
+        <section className="px-4 py-8 pb-4 space-y-3">
+           {/* New Games Row */}
+           <div className="grid grid-cols-2 gap-3">
+              <Link to="/challenge" className="bg-transparent hover:bg-white/10 border border-yellow-500/40 shadow-[0_0_15px_rgba(234,179,8,0.1)] p-4 rounded-xl flex flex-col items-center justify-center text-center gap-2 transition-all active:scale-95 duration-200 group backdrop-blur-sm">
+                  <div className="text-3xl mb-1 drop-shadow-sm group-hover:scale-110 transition-transform">⭐</div>
+                  <span className="font-bold text-gray-100 text-sm leading-tight">{t('home.quick.challenge')}</span>
+              </Link>
+              <Link to="/game-zone" className="bg-transparent hover:bg-white/10 border border-purple-500/40 shadow-[0_0_15px_rgba(168,85,247,0.1)] p-4 rounded-xl flex flex-col items-center justify-center text-center gap-2 transition-all active:scale-95 duration-200 group backdrop-blur-sm">
+                  <div className="text-3xl mb-1 drop-shadow-sm group-hover:scale-110 transition-transform">🎮</div>
+                  <span className="font-bold text-gray-100 text-sm leading-tight">{t('home.quick.game')}</span>
+              </Link>
+           </div>
+
+           {/* Original Row */}
            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               <Link to="/help" className="bg-transparent hover:bg-white/10 border border-white/40 shadow-[0_0_15px_rgba(255,255,255,0.05)] p-4 rounded-xl flex flex-col items-center justify-center text-center gap-2 transition-all active:scale-95 duration-200 group backdrop-blur-sm">
                   <div className="text-3xl mb-1 drop-shadow-sm group-hover:scale-110 transition-transform">🆘</div>
