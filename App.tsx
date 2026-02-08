@@ -1,6 +1,7 @@
 
 import { useEffect } from 'react';
 import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Challenge from './pages/Challenge';
@@ -73,6 +74,7 @@ const App = () => {
     <LanguageProvider>
       <HashRouter>
         <AppRoutes />
+        <Analytics />
       </HashRouter>
     </LanguageProvider>
   );
