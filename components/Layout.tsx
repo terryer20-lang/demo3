@@ -69,9 +69,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="w-10 h-10 md:w-11 md:h-11 rounded-full border-2 border-cyan-500/50 bg-black/50 shadow-[0_0_15px_rgba(6,182,212,0.5)] flex items-center justify-center overflow-hidden shrink-0 group-hover:scale-105 transition-transform backdrop-blur-sm">
              <img src="/icon-512x512.png" alt="Logo" className="w-full h-full object-cover" />
           </div>
-          <span className="font-bold text-white text-lg md:text-xl tracking-wide whitespace-nowrap drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] text-shadow-md">
-            {t('app.title')}
-          </span>
+          <div className="flex flex-col justify-center">
+            <span className="font-bold text-white text-lg md:text-xl tracking-wide whitespace-nowrap drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] text-shadow-md leading-tight">
+              {t('app.title')}
+            </span>
+            <span className="text-[10px] text-cyan-100/80 font-medium tracking-wider whitespace-nowrap scale-95 origin-left">
+              您的海外安全與權利守護者
+            </span>
+          </div>
         </Link>
         
         {/* Right Actions */}

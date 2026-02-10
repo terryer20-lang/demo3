@@ -32,6 +32,36 @@ const Help: React.FC = () => {
     { id: 'arrest', icon: '👮', color: 'bg-gray-500/20 text-gray-200 border-gray-500/30 hover:bg-gray-500/30' },
   ];
 
+  const TIPS_DATA = [
+    {
+      title: "一、 事前準備：多重備份與官方工具",
+      icon: "🎒",
+      content: [
+        { label: "證件雲端化", text: "將護照、身份證、簽證及機票拍照存於雲端 (iCloud/Google Drive)，確保離線可訪問。" },
+        { label: "紙質應急包", text: "隨身攜帶護照複印件及 2 張證件照，與正本分開存放。" },
+        { label: "手機設置", text: "下載「中國領事」App 完成實名認證；開啟手機 SOS 功能並填寫醫療急救卡。" }
+      ]
+    },
+    {
+      title: "二、 向警方求助：明確取得「官方證明」",
+      icon: "👮",
+      content: [
+        { label: "核心目標", text: "務必取得載有案號 (Case Number) 的報案證明，這是補證與理賠的唯一憑證。" },
+        { label: "語言溝通", text: "若語言不通，清晰重複 \"Chinese translator\" 請求翻譯。" },
+        { label: "自我保護", text: "僅陳述客觀事實，不猜測，且絕不簽署任何看不懂的文件。" }
+      ]
+    },
+    {
+      title: "三、 向使領館求助：驗證與替代文件",
+      icon: "🏛️",
+      content: [
+        { label: "必備材料", text: "前往時備妥警察報告、證件影本及照片以節省核實時間。" },
+        { label: "旅行證", text: "辦理速度快，適用於急需回國 (可轉機)。" },
+        { label: "護照補發", text: "耗時長 (約5-11工作天)，適用於需長期留居或有後續行程者。" }
+      ]
+    }
+  ];
+
   return (
     <div className="pb-24 min-h-screen bg-transparent pt-16">
       
@@ -211,23 +241,28 @@ const Help: React.FC = () => {
            </div>
         </div>
 
-        {/* Tips Footer - Transparent */}
-        <div className="bg-transparent backdrop-blur-md text-gray-300 rounded-2xl p-6 text-xs space-y-4 border border-white/10 shadow-lg">
+        {/* Tips Footer - Integrated & Optimized */}
+        <div className="bg-transparent backdrop-blur-md text-gray-300 rounded-2xl p-6 text-xs space-y-6 border border-white/10 shadow-lg">
            <h3 className="font-bold text-white text-sm border-b border-white/10 pb-3 flex items-center gap-2">
              💡 {t('help.tips_title')}
            </h3>
-           <div>
-             <span className="font-bold text-white block mb-1">{t('help.t_1_t')}</span>
-             <p className="text-gray-400 leading-relaxed">{t('help.t_1_d')}</p>
-           </div>
-           <div>
-             <span className="font-bold text-white block mb-1">{t('help.t_2_t')}</span>
-             <p className="text-gray-400 leading-relaxed">{t('help.t_2_d')}</p>
-           </div>
-           <div>
-             <span className="font-bold text-white block mb-1">{t('help.t_3_t')}</span>
-             <p className="text-gray-400 leading-relaxed">{t('help.t_3_d')}</p>
-           </div>
+           
+           {TIPS_DATA.map((tip, idx) => (
+             <div key={idx} className="space-y-2">
+                <div className="flex items-center gap-2 font-bold text-white text-sm">
+                   <span>{tip.icon}</span>
+                   <span>{tip.title}</span>
+                </div>
+                <ul className="space-y-2 pl-6 border-l-2 border-white/10 ml-2">
+                   {tip.content.map((item, i) => (
+                      <li key={i} className="leading-relaxed">
+                         <span className="text-brand-blue font-bold">{item.label}：</span>
+                         <span className="text-gray-400">{item.text}</span>
+                      </li>
+                   ))}
+                </ul>
+             </div>
+           ))}
         </div>
 
         {/* Navigation Button to Emergency Zone - iOS 26 Style */}
@@ -244,3 +279,4 @@ const Help: React.FC = () => {
 };
 
 export default Help;
+    

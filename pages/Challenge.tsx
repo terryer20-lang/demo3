@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '../LanguageContext';
 
@@ -16,6 +15,16 @@ const Challenge: React.FC = () => {
     { rank: 8, user: "Maca**", score: 1850 },
     { rank: 9, user: "Sou**", score: 1700 },
     { rank: 10, user: "User_103", score: 1650 },
+    { rank: 11, user: "Gao**", score: 1600 },
+    { rank: 12, user: "User_991", score: 1550 },
+    { rank: 13, user: "Ip**", score: 1520 },
+    { rank: 14, user: "Cheung**", score: 1480 },
+    { rank: 15, user: "User_332", score: 1450 },
+    { rank: 16, user: "Fong**", score: 1400 },
+    { rank: 17, user: "Leong**", score: 1380 },
+    { rank: 18, user: "Ng**", score: 1350 },
+    { rank: 19, user: "User_771", score: 1300 },
+    { rank: 20, user: "Kuok**", score: 1250 },
   ];
 
   const mockWeeklyLeaderboard = [
@@ -24,7 +33,52 @@ const Challenge: React.FC = () => {
     { rank: 3, user: "Zhang**", score: 690 },
     { rank: 4, user: "Li**", score: 650 },
     { rank: 5, user: "Wong**", score: 600 },
+    { rank: 6, user: "Sou**", score: 580 },
+    { rank: 7, user: "User_112", score: 550 },
+    { rank: 8, user: "Ho**", score: 520 },
+    { rank: 9, user: "Leung**", score: 500 },
+    { rank: 10, user: "User_445", score: 480 },
+    { rank: 11, user: "Chan**", score: 460 },
+    { rank: 12, user: "Wu**", score: 440 },
+    { rank: 13, user: "Lam**", score: 420 },
+    { rank: 14, user: "User_009", score: 400 },
+    { rank: 15, user: "Pun**", score: 380 },
+    { rank: 16, user: "Lok**", score: 360 },
+    { rank: 17, user: "Choi**", score: 340 },
+    { rank: 18, user: "User_551", score: 320 },
+    { rank: 19, user: "Sam**", score: 300 },
+    { rank: 20, user: "Vong**", score: 280 },
   ];
+
+  const getRowStyle = (rank: number) => {
+    switch (rank) {
+      case 1: // Gold
+        return 'bg-gradient-to-r from-yellow-500/30 via-yellow-500/10 to-transparent border-l-4 border-yellow-400';
+      case 2: // Silver
+        return 'bg-gradient-to-r from-slate-400/30 via-slate-400/10 to-transparent border-l-4 border-slate-300';
+      case 3: // Bronze
+        return 'bg-gradient-to-r from-orange-700/30 via-orange-700/10 to-transparent border-l-4 border-orange-600';
+      default:
+        return 'hover:bg-white/5 border-l-4 border-transparent';
+    }
+  };
+
+  const getRankBadge = (rank: number) => {
+    switch (rank) {
+      case 1: 
+        return <span className="text-2xl filter drop-shadow-md">🥇</span>;
+      case 2: 
+        return <span className="text-2xl filter drop-shadow-md">🥈</span>;
+      case 3: 
+        return <span className="text-2xl filter drop-shadow-md">🥉</span>;
+      default:
+        return (
+          <div className="w-8 h-8 flex items-center justify-center rounded-full font-bold italic text-sm text-gray-500 border border-white/10 bg-white/5">
+            {rank}
+          </div>
+        );
+    }
+  };
 
   return (
     <div className="pb-24 min-h-screen bg-transparent">
@@ -50,17 +104,19 @@ const Challenge: React.FC = () => {
           
           <div className="divide-y divide-white/5">
             {mockLeaderboard.map((item) => (
-              <div key={item.rank} className="flex items-center justify-between p-4 hover:bg-white/5 transition-colors">
+              <div 
+                key={item.rank} 
+                className={`flex items-center justify-between p-4 transition-all duration-300 ${getRowStyle(item.rank)}`}
+              >
                 <div className="flex items-center gap-4">
-                  <div className={`w-8 h-8 flex items-center justify-center rounded-full font-bold italic text-sm border
-                    ${item.rank === 1 ? 'bg-yellow-500/20 text-yellow-400 border-yellow-500/50' : 
-                      item.rank === 2 ? 'bg-gray-400/20 text-gray-300 border-gray-400/50' : 
-                      item.rank === 3 ? 'bg-orange-600/20 text-orange-400 border-orange-600/50' : 'text-gray-500 border-transparent bg-white/5'}`}>
-                    {item.rank}
+                  <div className="w-8 flex justify-center shrink-0">
+                    {getRankBadge(item.rank)}
                   </div>
-                  <span className="text-sm font-bold text-gray-200">{item.user}</span>
+                  <span className={`text-sm font-bold ${item.rank <= 3 ? 'text-white scale-105' : 'text-gray-200'}`}>
+                    {item.user}
+                  </span>
                 </div>
-                <span className="text-sm font-bold text-green-400 bg-green-500/10 px-2 py-0.5 rounded border border-green-500/20">
+                <span className={`text-sm font-bold px-2 py-0.5 rounded border ${item.rank <= 3 ? 'text-white border-white/30 bg-white/10' : 'text-green-400 bg-green-500/10 border-green-500/20'}`}>
                   {item.score} {t('challenge.score_suffix')}
                 </span>
               </div>
@@ -93,17 +149,19 @@ const Challenge: React.FC = () => {
           
           <div className="divide-y divide-white/5">
             {mockWeeklyLeaderboard.map((item) => (
-              <div key={item.rank} className="flex items-center justify-between p-4 hover:bg-white/5 transition-colors">
+              <div 
+                key={item.rank} 
+                className={`flex items-center justify-between p-4 transition-all duration-300 ${getRowStyle(item.rank)}`}
+              >
                 <div className="flex items-center gap-4">
-                  <div className={`w-8 h-8 flex items-center justify-center rounded-full font-bold italic text-sm border
-                    ${item.rank === 1 ? 'bg-blue-500/20 text-blue-400 border-blue-500/50' : 
-                      item.rank === 2 ? 'bg-cyan-500/20 text-cyan-400 border-cyan-500/50' : 
-                      item.rank === 3 ? 'bg-indigo-500/20 text-indigo-400 border-indigo-500/50' : 'text-gray-500 border-transparent bg-white/5'}`}>
-                    {item.rank}
+                  <div className="w-8 flex justify-center shrink-0">
+                    {getRankBadge(item.rank)}
                   </div>
-                  <span className="text-sm font-bold text-gray-200">{item.user}</span>
+                  <span className={`text-sm font-bold ${item.rank <= 3 ? 'text-white scale-105' : 'text-gray-200'}`}>
+                    {item.user}
+                  </span>
                 </div>
-                <span className="text-sm font-bold text-brand-blue bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">
+                <span className={`text-sm font-bold px-2 py-0.5 rounded border ${item.rank <= 3 ? 'text-white border-white/30 bg-white/10' : 'text-brand-blue bg-blue-500/10 border-blue-500/20'}`}>
                   {item.score} {t('challenge.score_suffix')}
                 </span>
               </div>

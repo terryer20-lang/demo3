@@ -80,7 +80,7 @@ const Graphics: React.FC = () => {
      if (navigator.share) {
         try {
            await navigator.share({
-              title: '智保同行 - 圖解領保',
+              title: '智保同行 - 圖文包',
               text: '看看這個實用的領保知識！',
               url: window.location.href,
            });
@@ -191,7 +191,7 @@ const Graphics: React.FC = () => {
                      <img 
                        src={item.image} 
                        alt="Story" 
-                       className="absolute inset-0 w-full h-full object-contain"
+                       className="absolute inset-0 w-full h-full object-cover"
                        onError={(e) => { e.currentTarget.style.display = 'none'; }} 
                      />
                   ) : (
@@ -250,7 +250,7 @@ const Graphics: React.FC = () => {
 
          {/* Scroll Down Indicator */}
          <div className="absolute bottom-8 left-0 right-0 z-30 flex flex-col items-center text-white animate-bounce pointer-events-none">
-            <span className="text-xs font-bold tracking-widest uppercase opacity-80 mb-2 drop-shadow-md">更多圖解</span>
+            <span className="text-xs font-bold tracking-widest uppercase opacity-80 mb-2 drop-shadow-md">更多圖文</span>
             <svg className="w-6 h-6 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7" />
             </svg>

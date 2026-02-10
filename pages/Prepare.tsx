@@ -323,19 +323,90 @@ const Prepare: React.FC = () => {
            </div>
         </div>
 
-        {/* Luggage / Customs - Do's and Don'ts */}
-        <div>
-           <h2 className="font-bold text-white mb-3 px-1">{t('prepare.luggage_title')}</h2>
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              <div className="bg-emerald-900/30 backdrop-blur-md rounded-xl p-4 border border-emerald-500/30 relative overflow-hidden">
-                 <div className="absolute -right-2 -top-2 text-6xl opacity-10">💊</div>
-                 <h3 className="font-bold text-emerald-400 text-sm mb-1">{t('prepare.luggage_ok')}</h3>
-                 <p className="text-xs text-emerald-200/80 leading-relaxed">{t('prepare.luggage_ok_desc')}</p>
+        {/* Customs Encyclopedia Section */}
+        <div className="space-y-4">
+           <div className="flex items-center gap-2 mb-2 px-1">
+              <span className="text-2xl">🛃</span>
+              <h2 className="font-bold text-white text-lg">{t('prepare.customs_title')}</h2>
+           </div>
+
+           {/* 1. Carry-on vs Checked */}
+           <div className="bg-slate-800/60 backdrop-blur-md rounded-2xl p-5 border border-white/10 shadow-lg">
+              <h3 className="text-brand-blue font-bold text-sm mb-3 flex items-center gap-2">
+                 👜 {t('prepare.customs_carry_title')}
+              </h3>
+              <div className="space-y-3">
+                 <div className="flex gap-3 items-start p-3 bg-white/5 rounded-xl">
+                    <div className="text-xl">🔋</div>
+                    <div>
+                       <div className="text-sm font-bold text-gray-200">{t('prepare.customs_power')}</div>
+                       <div className="text-xs text-gray-400 leading-relaxed">{t('prepare.customs_power_desc')}</div>
+                    </div>
+                 </div>
+                 <div className="flex gap-3 items-start p-3 bg-white/5 rounded-xl">
+                    <div className="text-xl">🧴</div>
+                    <div>
+                       <div className="text-sm font-bold text-gray-200">{t('prepare.customs_liquid')}</div>
+                       <div className="text-xs text-gray-400 leading-relaxed">{t('prepare.customs_liquid_desc')}</div>
+                    </div>
+                 </div>
+                 <div className="grid grid-cols-2 gap-2 text-[10px] text-gray-400">
+                    <div className="bg-black/20 p-2 rounded flex items-center gap-2">
+                       <span>🚫</span> 打火機/刀具禁止手提
+                    </div>
+                    <div className="bg-black/20 p-2 rounded flex items-center gap-2">
+                       <span>📱</span> 電子設備需有電可開機
+                    </div>
+                 </div>
               </div>
-              <div className="bg-rose-900/30 backdrop-blur-md rounded-xl p-4 border border-rose-500/30 relative overflow-hidden">
-                 <div className="absolute -right-2 -top-2 text-6xl opacity-10">🚫</div>
-                 <h3 className="font-bold text-rose-400 text-sm mb-1">{t('prepare.luggage_no')}</h3>
-                 <p className="text-xs text-rose-200/80 leading-relaxed">{t('prepare.luggage_no_desc')}</p>
+           </div>
+
+           {/* 2. Quarantine Red Lines */}
+           <div className="bg-red-900/20 backdrop-blur-md rounded-2xl p-5 border border-red-500/30 shadow-lg relative overflow-hidden">
+              <div className="absolute -right-4 -top-4 text-8xl opacity-5 text-red-500">🍖</div>
+              <h3 className="text-red-400 font-bold text-sm mb-3 flex items-center gap-2 relative z-10">
+                 🚨 {t('prepare.customs_forbidden_title')}
+              </h3>
+              <div className="space-y-3 relative z-10">
+                 <div>
+                    <div className="text-sm font-bold text-gray-200 mb-1">{t('prepare.customs_meat')}</div>
+                    <p className="text-xs text-red-200/70 leading-relaxed border-l-2 border-red-500 pl-2">
+                       {t('prepare.customs_meat_desc')}
+                    </p>
+                 </div>
+                 <div>
+                    <div className="text-sm font-bold text-gray-200 mb-1">{t('prepare.customs_fresh')}</div>
+                    <p className="text-xs text-red-200/70 leading-relaxed border-l-2 border-red-500 pl-2">
+                       {t('prepare.customs_fresh_desc')}
+                    </p>
+                 </div>
+              </div>
+           </div>
+
+           {/* 3. Country Specifics - Grid */}
+           <div>
+              <h3 className="text-gray-400 font-bold text-xs uppercase tracking-wider mb-3 px-1">{t('prepare.customs_specific_title')}</h3>
+              <div className="grid grid-cols-2 gap-3">
+                 <div className="bg-slate-800/80 p-3 rounded-xl border border-white/5 flex flex-col justify-between">
+                    <span className="text-xl mb-1">🇹🇼</span>
+                    <span className="text-[10px] text-gray-300 font-bold leading-tight">{t('prepare.customs_tw')}</span>
+                 </div>
+                 <div className="bg-slate-800/80 p-3 rounded-xl border border-white/5 flex flex-col justify-between">
+                    <span className="text-xl mb-1">🇰🇷</span>
+                    <span className="text-[10px] text-gray-300 font-bold leading-tight">{t('prepare.customs_kr')}</span>
+                 </div>
+                 <div className="bg-slate-800/80 p-3 rounded-xl border border-white/5 flex flex-col justify-between">
+                    <span className="text-xl mb-1">🇦🇺</span>
+                    <span className="text-[10px] text-gray-300 font-bold leading-tight">{t('prepare.customs_aus')}</span>
+                 </div>
+                 <div className="bg-slate-800/80 p-3 rounded-xl border border-white/5 flex flex-col justify-between">
+                    <span className="text-xl mb-1">🇸🇬</span>
+                    <span className="text-[10px] text-gray-300 font-bold leading-tight">{t('prepare.customs_sg')}</span>
+                 </div>
+                 <div className="bg-slate-800/80 p-3 rounded-xl border border-white/5 flex flex-col justify-between col-span-2">
+                    <span className="text-xl mb-1">🇺🇸</span>
+                    <span className="text-[10px] text-gray-300 font-bold leading-tight">{t('prepare.customs_us')}</span>
+                 </div>
               </div>
            </div>
         </div>
